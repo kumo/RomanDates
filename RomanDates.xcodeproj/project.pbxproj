@@ -331,6 +331,7 @@
 				GCC_PREFIX_HEADER = "BasicBanner/RomanDates-Prefix.pch";
 				INFOPLIST_FILE = "BasicBanner/RomanDates-Info.plist";
 				PRODUCT_NAME = RomanDates;
+				PROVISIONING_PROFILE = "2a7fca7b-b184-44d8-a722-75b16f64efdc";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -345,6 +346,7 @@
 				GCC_PREFIX_HEADER = "BasicBanner/RomanDates-Prefix.pch";
 				INFOPLIST_FILE = "BasicBanner/RomanDates-Info.plist";
 				PRODUCT_NAME = RomanDates;
+				PROVISIONING_PROFILE = "2a7fca7b-b184-44d8-a722-75b16f64efdc";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
