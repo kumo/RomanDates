@@ -145,10 +145,10 @@
     NSString *romanYear = [converter performSimpleConversionToRoman:year];
     
     if ([locale isEqualToString:@"en_US"]) {
-        [_dateLabel setText:[NSString stringWithFormat:@"%@\u200B.\u200B%@\u200B.\u200B%@", romanMonth, romanDay, romanYear]];
+        [_dateLabel setText:[NSString stringWithFormat:@"%@\u200B-\u200B%@\u200B-\u200B%@", romanMonth, romanDay, romanYear]];
         [_dateLabel setAccessibilityLabel:[NSString stringWithFormat:@"%@ - %@ - %@", romanMonth, romanDay, romanYear]];
     } else {
-        [_dateLabel setText:[NSString stringWithFormat:@"%@\u200B.\u200B%@\u200B.\u200B%@", romanDay, romanMonth, romanYear]];
+        [_dateLabel setText:[NSString stringWithFormat:@"%@\u200B-\u200B%@\u200B-\u200B%@", romanDay, romanMonth, romanYear]];
         [_dateLabel setAccessibilityLabel:[NSString stringWithFormat:@"%@ - %@ - %@", romanDay, romanMonth, romanYear]];
     }
     
