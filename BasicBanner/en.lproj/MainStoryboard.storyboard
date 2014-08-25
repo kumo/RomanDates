@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="TjI-Xk-G0B">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--Roman Dates View Controller - Roman Dates-->
+        <scene sceneID="M5a-zS-zuL">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="nYf-8z-xjF" customClass="RomanDatesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iNh-eL-lFb"/>
+                        <viewControllerLayoutGuide type="bottom" id="qdl-cG-IV1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jzm-YG-9pf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="clip" numberOfLines="0" minimumFontSize="20" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="mVx-lm-dF5">
+                                <rect key="frame" x="8" y="52" width="304" height="346"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="66"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="2Ym-g4-zgq">
+                                <rect key="frame" x="0.0" y="406" width="320" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="ACB-zs-3Vh"/>
+                                    <constraint firstAttribute="height" constant="162" id="LWI-a4-1xf"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="430650237.51219898">
+                                    <!--2014-08-25 09:03:57 +0000-->
+                                </date>
+                                <timeZone key="timeZone" name="America/Los_Angeles">
+                                    <data key="data">
+VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
+y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
+5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
+8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
+AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
+DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
+HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
+KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
+OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
+Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
+VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
+Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
+cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
+f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
+</data>
+                                </timeZone>
+                                <connections>
+                                    <action selector="dateAction:" destination="nYf-8z-xjF" eventType="valueChanged" id="1mR-OV-W8L"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94117653369903564" green="0.94117653369903564" blue="0.94117653369903564" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mVx-lm-dF5" secondAttribute="trailing" constant="8" id="0Au-25-A9q"/>
+                            <constraint firstItem="mVx-lm-dF5" firstAttribute="top" secondItem="iNh-eL-lFb" secondAttribute="bottom" constant="8" id="IdL-JP-Wxj"/>
+                            <constraint firstItem="2Ym-g4-zgq" firstAttribute="top" secondItem="mVx-lm-dF5" secondAttribute="bottom" constant="8" id="TaG-Ic-RVT"/>
+                            <constraint firstItem="qdl-cG-IV1" firstAttribute="top" secondItem="2Ym-g4-zgq" secondAttribute="bottom" id="dmD-y0-uWL"/>
+                            <constraint firstAttribute="trailing" secondItem="2Ym-g4-zgq" secondAttribute="trailing" id="lX9-YF-Kzf"/>
+                            <constraint firstItem="2Ym-g4-zgq" firstAttribute="leading" secondItem="Jzm-YG-9pf" secondAttribute="leading" id="vFz-AU-xNj"/>
+                            <constraint firstItem="mVx-lm-dF5" firstAttribute="leading" secondItem="Jzm-YG-9pf" secondAttribute="leading" constant="8" id="xd8-sR-z5t"/>
+                        </constraints>
+                        <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Roman Dates" id="KBQ-Ay-P2W">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="MKo-L4-Yyt">
+                            <connections>
+                                <action selector="shareAction:" destination="nYf-8z-xjF" id="sRc-LV-IsG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dateLabel" destination="mVx-lm-dF5" id="1N1-IN-xw5"/>
+                        <outlet property="datePicker" destination="2Ym-g4-zgq" id="iWp-Oe-8ym"/>
+                        <outlet property="view" destination="Jzm-YG-9pf" id="F32-2o-DWJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E85-9E-4kc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="951" y="-652"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QRP-5c-Adj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uOr-XQ-z2Y" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ff3-gH-0xt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nYf-8z-xjF" kind="relationship" relationship="rootViewController" id="Kiy-3j-xEF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="38R-oR-mQl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="519" y="-652"/>
+        </scene>
+        <!--Banner View Controller-->
+        <scene sceneID="JcV-gV-gdU">
+            <objects>
+                <viewController id="TjI-Xk-G0B" customClass="BannerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N9w-8j-RwJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="EUw-DC-IVl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NK8-IU-aUG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWW-z5-1L4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="uOr-XQ-z2Y" kind="embed" id="zgA-JT-vYc"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BWW-z5-1L4" firstAttribute="top" secondItem="NK8-IU-aUG" secondAttribute="top" id="0co-rn-CA0"/>
+                            <constraint firstItem="BWW-z5-1L4" firstAttribute="bottom" secondItem="NK8-IU-aUG" secondAttribute="bottom" id="8i8-0D-cZu"/>
+                            <constraint firstItem="BWW-z5-1L4" firstAttribute="leading" secondItem="NK8-IU-aUG" secondAttribute="leading" id="UT2-av-zMp"/>
+                            <constraint firstItem="BWW-z5-1L4" firstAttribute="trailing" secondItem="NK8-IU-aUG" secondAttribute="trailing" id="mOn-cr-YE6"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Cm-q5-29K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="85" y="-652"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
