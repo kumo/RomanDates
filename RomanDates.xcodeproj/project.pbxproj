@@ -23,6 +23,7 @@
 		631EA72B1402E7CF003FB021 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 631EA72A1402E7CF003FB021 /* AppDelegate.m */; };
 		631EA76E1402E8A3003FB021 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631EA76D1402E8A3003FB021 /* iAd.framework */; };
 		631EA77F1402F8B1003FB021 /* RomanDatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631EA77D1402F8B1003FB021 /* RomanDatesViewController.m */; };
+		BFA5BAC519AB3D6D00743CCF /* RomanNumsActivityItemProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA5BAC419AB3D6D00743CCF /* RomanNumsActivityItemProvider.m */; };
 		BFFDADB819AB37490064112A /* Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFDADB719AB37490064112A /* Converter.m */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,8 @@
 		631EA76D1402E8A3003FB021 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		631EA77C1402F8B1003FB021 /* RomanDatesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RomanDatesViewController.h; sourceTree = "<group>"; };
 		631EA77D1402F8B1003FB021 /* RomanDatesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RomanDatesViewController.m; sourceTree = "<group>"; };
+		BFA5BAC319AB3D6D00743CCF /* RomanNumsActivityItemProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RomanNumsActivityItemProvider.h; sourceTree = "<group>"; };
+		BFA5BAC419AB3D6D00743CCF /* RomanNumsActivityItemProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RomanNumsActivityItemProvider.m; sourceTree = "<group>"; };
 		BFFDADB619AB37490064112A /* Converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Converter.h; sourceTree = "<group>"; };
 		BFFDADB719AB37490064112A /* Converter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Converter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +107,8 @@
 				631EA77D1402F8B1003FB021 /* RomanDatesViewController.m */,
 				BFFDADB619AB37490064112A /* Converter.h */,
 				BFFDADB719AB37490064112A /* Converter.m */,
+				BFA5BAC319AB3D6D00743CCF /* RomanNumsActivityItemProvider.h */,
+				BFA5BAC419AB3D6D00743CCF /* RomanNumsActivityItemProvider.m */,
 				631EA7211402E7CF003FB021 /* Supporting Files */,
 			);
 			name = RomanDates;
@@ -199,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				631EA7271402E7CF003FB021 /* main.m in Sources */,
+				BFA5BAC519AB3D6D00743CCF /* RomanNumsActivityItemProvider.m in Sources */,
 				631EA72B1402E7CF003FB021 /* AppDelegate.m in Sources */,
 				BFFDADB819AB37490064112A /* Converter.m in Sources */,
 				631EA77F1402F8B1003FB021 /* RomanDatesViewController.m in Sources */,

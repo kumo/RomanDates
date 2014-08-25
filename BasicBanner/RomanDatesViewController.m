@@ -47,6 +47,7 @@
 
 #import "RomanDatesViewController.h"
 #import "Converter.h"
+#import "RomanNumsActivityItemProvider.h"
 
 @interface RomanDatesViewController ()
 
@@ -149,17 +150,23 @@
     [self.view addSubview:_bannerView];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self convertDateToRoman];
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     [self layoutAnimated:NO];
-    [self startTimer];
+    //[self startTimer];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    [self stopTimer];
+    //[self stopTimer];
 }
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_6_0
@@ -192,13 +199,13 @@
 
 - (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
 {
-    [self stopTimer];
+    //[self stopTimer];
     return YES;
 }
 
 - (void)bannerViewActionDidFinish:(ADBannerView *)banner
 {
-    [self startTimer];
+    //[self startTimer];
 }
 
 #pragma mark - Actions
@@ -247,6 +254,16 @@
 - (IBAction)dateAction:(id)sender
 {
     [self convertDateToRoman];
+}
+
+- (IBAction)shareAction:(id)sender {
+    // Show different text for each service, see http://www.albertopasca.it/whiletrue/2012/10/objective-c-custom-uiactivityviewcontroller-icons-text/
+    RomanNumsActivityItemProvider *activityItemProvider = [[RomanNumsActivityItemProvider alloc] initWithPlaceholderItem:[_dateLabel text]];
+    
+    NSArray *itemsToShare = @[activityItemProvider];
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
+    //activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll]; //or whichever you don't need
+    [self presentViewController:activityVC animated:YES completion:nil];
 }
 
 @end

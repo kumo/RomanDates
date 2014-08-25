@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Roman Dates View Controller-->
+        <!--Roman Dates View Controller - Roman Dates-->
         <scene sceneID="M5a-zS-zuL">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="nYf-8z-xjF" customClass="RomanDatesViewController" sceneMemberID="viewController">
@@ -22,19 +22,8 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="clip" numberOfLines="0" minimumFontSize="20" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="mVx-lm-dF5">
-                                        <rect key="frame" x="0.0" y="43" width="320" height="291"/>
+                                        <rect key="frame" x="0.0" y="8" width="320" height="326"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="66"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00:00:00.0" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="7zF-LS-dFU">
-                                        <rect key="frame" x="20" y="15" width="280" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="280" id="6Ut-bE-7qc"/>
-                                            <constraint firstAttribute="height" constant="20" id="WnZ-9N-ul8"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="2Ym-g4-zgq">
@@ -74,16 +63,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     </datePicker>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="7zF-LS-dFU" firstAttribute="top" secondItem="0b2-Ne-nza" secondAttribute="top" constant="15" id="1df-8d-EKr"/>
                                     <constraint firstAttribute="trailing" secondItem="mVx-lm-dF5" secondAttribute="trailing" id="1jR-SK-uER"/>
                                     <constraint firstAttribute="bottom" secondItem="2Ym-g4-zgq" secondAttribute="bottom" id="38J-zy-HRq"/>
                                     <constraint firstItem="2Ym-g4-zgq" firstAttribute="top" secondItem="mVx-lm-dF5" secondAttribute="bottom" constant="8" id="GxG-n6-9zW"/>
-                                    <constraint firstItem="mVx-lm-dF5" firstAttribute="top" secondItem="7zF-LS-dFU" secondAttribute="bottom" constant="8" id="UHt-0m-1qS"/>
                                     <constraint firstItem="2Ym-g4-zgq" firstAttribute="leading" secondItem="0b2-Ne-nza" secondAttribute="leading" id="Ub6-ah-1Nz"/>
                                     <constraint firstItem="mVx-lm-dF5" firstAttribute="leading" secondItem="0b2-Ne-nza" secondAttribute="leading" id="aeZ-AN-Wfr"/>
                                     <constraint firstAttribute="trailing" secondItem="2Ym-g4-zgq" secondAttribute="trailing" id="oRW-sr-XIb"/>
-                                    <constraint firstAttribute="trailing" secondItem="7zF-LS-dFU" secondAttribute="trailing" constant="20" id="wsE-1N-l7h"/>
-                                    <constraint firstItem="7zF-LS-dFU" firstAttribute="leading" secondItem="0b2-Ne-nza" secondAttribute="leading" constant="20" id="zFc-qf-boS"/>
+                                    <constraint firstItem="mVx-lm-dF5" firstAttribute="top" secondItem="0b2-Ne-nza" secondAttribute="top" constant="8" id="x9E-3R-ZJt"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -96,13 +82,18 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </constraints>
                         <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     </view>
-                    <navigationItem key="navigationItem" id="KBQ-Ay-P2W"/>
+                    <navigationItem key="navigationItem" title="Roman Dates" id="KBQ-Ay-P2W">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="MKo-L4-Yyt">
+                            <connections>
+                                <action selector="shareAction:" destination="nYf-8z-xjF" id="sRc-LV-IsG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bottomConstraint" destination="cHu-3A-awz" id="D4y-Hk-jWG"/>
                         <outlet property="contentView" destination="0b2-Ne-nza" id="0U1-8S-bdd"/>
                         <outlet property="dateLabel" destination="mVx-lm-dF5" id="1N1-IN-xw5"/>
                         <outlet property="datePicker" destination="2Ym-g4-zgq" id="iWp-Oe-8ym"/>
-                        <outlet property="timerLabel" destination="7zF-LS-dFU" id="lf4-5S-3aE"/>
                         <outlet property="view" destination="Jzm-YG-9pf" id="F32-2o-DWJ"/>
                     </connections>
                 </viewController>
