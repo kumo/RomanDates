@@ -35,7 +35,7 @@
           itemForActivityType:(NSString *)activityType
 {
     if ( [activityType isEqualToString:UIActivityTypePostToTwitter] )
-        return [NSString stringWithFormat:@"%@ #romannumsapp", self.placeholderItem];
+        return [NSString stringWithFormat:@"%@ #romandatesapp", self.placeholderItem];
     if ( [activityType isEqualToString:UIActivityTypePostToFacebook] )
         return self.placeholderItem;
     return self.placeholderItem;
