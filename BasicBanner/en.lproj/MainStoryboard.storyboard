@@ -17,9 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="clip" numberOfLines="0" minimumFontSize="20" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="mVx-lm-dF5">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I  II   III" textAlignment="center" lineBreakMode="clip" numberOfLines="0" minimumFontSize="20" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="mVx-lm-dF5">
                                 <rect key="frame" x="8" y="52" width="304" height="346"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="66"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="66"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.2483943634969325" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="2Ym-g4-zgq">
