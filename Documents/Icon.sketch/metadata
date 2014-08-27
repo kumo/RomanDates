@@ -13,9 +13,11 @@
 		<string>HelveticaNeue-Bold</string>
 		<string>HelveticaNeue</string>
 		<string>HelveticaNeue-Medium</string>
+		<string>Times-Bold</string>
+		<string>Times-Roman</string>
 	</array>
 	<key>length</key>
-	<integer>102526</integer>
+	<integer>214949</integer>
 	<key>version</key>
 	<integer>37</integer>
 </dict>
