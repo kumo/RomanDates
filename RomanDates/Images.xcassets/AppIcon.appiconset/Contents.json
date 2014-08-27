@@ -66,25 +66,25 @@
     {
       "size" : "72x72",
       "idiom" : "ipad",
-      "filename" : "144 - App Icon.png",
+      "filename" : "72 - App Icon.png",
       "scale" : "1x"
     },
     {
       "size" : "72x72",
       "idiom" : "ipad",
-      "filename" : "144 - App Icon@2X.png",
+      "filename" : "72 - App Icon@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "152 - App Icon.png",
+      "filename" : "76 - App Icon.png",
       "scale" : "1x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "152 - App Icon@2X.png",
+      "filename" : "76 - App Icon@2x.png",
       "scale" : "2x"
     }
   ],
