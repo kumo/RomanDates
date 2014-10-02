@@ -340,6 +340,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BasicBanner/RomanDates-Prefix.pch";
 				INFOPLIST_FILE = "BasicBanner/RomanDates-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = RomanDates;
 				PROVISIONING_PROFILE = "2a7fca7b-b184-44d8-a722-75b16f64efdc";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -356,6 +357,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BasicBanner/RomanDates-Prefix.pch";
 				INFOPLIST_FILE = "BasicBanner/RomanDates-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = RomanDates;
 				PROVISIONING_PROFILE = "2a7fca7b-b184-44d8-a722-75b16f64efdc";
 				TARGETED_DEVICE_FAMILY = 1;
