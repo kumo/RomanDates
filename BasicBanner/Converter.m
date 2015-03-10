@@ -35,7 +35,7 @@
 	
 	NSMutableString *resultString = [NSMutableString stringWithCapacity:128];
 	
-	int arrayCount = [romanCalculationValues count];
+	int arrayCount = (int)[romanCalculationValues count];
 	// We need to iterate through all of the roman values
 	int i;
 	for (i = 0; i < arrayCount; i++)
