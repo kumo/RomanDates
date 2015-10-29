@@ -24,6 +24,7 @@
 		631EA76E1402E8A3003FB021 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631EA76D1402E8A3003FB021 /* iAd.framework */; };
 		631EA77F1402F8B1003FB021 /* RomanDatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631EA77D1402F8B1003FB021 /* RomanDatesViewController.m */; };
 		BF2EECCF19AB9E980016FB16 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EECCE19AB9E980016FB16 /* BannerViewController.m */; };
+		BF3C1F421BE28297003FD66F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C1F411BE28297003FD66F /* MainViewController.swift */; };
 		BF99018D19DD9A9900E049B0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF99018C19DD9A9900E049B0 /* LaunchScreen.xib */; };
 		BFA5BAC519AB3D6D00743CCF /* RomanNumsActivityItemProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA5BAC419AB3D6D00743CCF /* RomanNumsActivityItemProvider.m */; };
 		BFBF785919ABA938007AB1B0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBF785819ABA938007AB1B0 /* Images.xcassets */; };
@@ -54,6 +55,8 @@
 		631EA77D1402F8B1003FB021 /* RomanDatesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RomanDatesViewController.m; sourceTree = "<group>"; };
 		BF2EECCD19AB9E980016FB16 /* BannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
 		BF2EECCE19AB9E980016FB16 /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
+		BF3C1F401BE28297003FD66F /* RomanDates-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RomanDates-Bridging-Header.h"; sourceTree = "<group>"; };
+		BF3C1F411BE28297003FD66F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BF99018C19DD9A9900E049B0 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		BFA5BAC319AB3D6D00743CCF /* RomanNumsActivityItemProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RomanNumsActivityItemProvider.h; sourceTree = "<group>"; };
 		BFA5BAC419AB3D6D00743CCF /* RomanNumsActivityItemProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RomanNumsActivityItemProvider.m; sourceTree = "<group>"; };
@@ -112,6 +115,7 @@
 				631EA72A1402E7CF003FB021 /* AppDelegate.m */,
 				631EA77C1402F8B1003FB021 /* RomanDatesViewController.h */,
 				631EA77D1402F8B1003FB021 /* RomanDatesViewController.m */,
+				BF3C1F411BE28297003FD66F /* MainViewController.swift */,
 				BF2EECCD19AB9E980016FB16 /* BannerViewController.h */,
 				BF2EECCE19AB9E980016FB16 /* BannerViewController.m */,
 				BFFDADB619AB37490064112A /* Converter.h */,
@@ -120,6 +124,7 @@
 				BFA5BAC419AB3D6D00743CCF /* RomanNumsActivityItemProvider.m */,
 				BFBF785819ABA938007AB1B0 /* Images.xcassets */,
 				631EA7211402E7CF003FB021 /* Supporting Files */,
+				BF3C1F401BE28297003FD66F /* RomanDates-Bridging-Header.h */,
 			);
 			name = RomanDates;
 			path = BasicBanner;
@@ -221,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF3C1F421BE28297003FD66F /* MainViewController.swift in Sources */,
 				631EA7271402E7CF003FB021 /* main.m in Sources */,
 				BFA5BAC519AB3D6D00743CCF /* RomanNumsActivityItemProvider.m in Sources */,
 				BF2EECCF19AB9E980016FB16 /* BannerViewController.m in Sources */,
@@ -342,14 +348,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BasicBanner/RomanDates-Prefix.pch";
 				INFOPLIST_FILE = "BasicBanner/RomanDates-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "it.kumo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = RomanDates;
 				PROVISIONING_PROFILE = "2a7fca7b-b184-44d8-a722-75b16f64efdc";
+				SWIFT_OBJC_BRIDGING_HEADER = "BasicBanner/RomanDates-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -359,14 +369,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BasicBanner/RomanDates-Prefix.pch";
 				INFOPLIST_FILE = "BasicBanner/RomanDates-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "it.kumo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = RomanDates;
 				PROVISIONING_PROFILE = "2a7fca7b-b184-44d8-a722-75b16f64efdc";
+				SWIFT_OBJC_BRIDGING_HEADER = "BasicBanner/RomanDates-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
