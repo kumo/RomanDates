@@ -66,10 +66,9 @@ class MainViewController: UIViewController {
             let navigation = self.navigationController
         {
             let firstActivityItem = text
-            let secondActivityItem = NSURL(string: "https://itunes.apple.com/us/app/id912520382?mt=8")!
-
+            //let secondActivityItem = NSURL(string: "https://itunes.apple.com/us/app/id912520382?mt=8")!
             
-            let activityViewController : UIActivityViewController = UIActivityViewController(activityItems: [firstActivityItem, secondActivityItem], applicationActivities: nil)
+            let activityViewController : UIActivityViewController = UIActivityViewController(activityItems: [firstActivityItem/*, secondActivityItem*/], applicationActivities: nil)
             
             if self.respondsToSelector("popoverPresentationController") {
                 // iOS 8+
