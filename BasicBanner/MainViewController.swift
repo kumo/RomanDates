@@ -31,9 +31,12 @@ class MainViewController: UIViewController {
             if let accessibilityText = dateLabel.text?.stringByReplacingOccurrencesOfString("\u{200B}·\u{200B}", withString: " - ") {
                 dateLabel.accessibilityLabel = accessibilityText.characters.reduce("",
                     combine: {String($0) + String($1) + ". "})
+                
+                UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, dateLabel.accessibilityLabel)
             }
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
