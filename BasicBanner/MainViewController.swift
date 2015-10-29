@@ -13,15 +13,30 @@ class MainViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    var dateOrder: NSLocale.DateOrder = .DayFirst
+
     private var date = NSDate() {
         didSet {
-            dateLabel.text = "hello"
+            let parts = date.dateInRoman()
+            
+            switch dateOrder {
+            case .DayFirst:
+                dateLabel.text = parts.day + "\u{200B}·\u{200B}" + parts.month + "\u{200B}·\u{200B}" + parts.year
+            case .MonthFirst:
+                dateLabel.text = parts.month + "\u{200B}·\u{200B}" + parts.day + "\u{200B}·\u{200B}" + parts.year
+            case .YearFirst:
+                dateLabel.text = parts.year + "\u{200B}·\u{200B}" + parts.month + "\u{200B}·\u{200B}" + parts.day
+            }
+            
+            if let accessibilityText = dateLabel.text?.stringByReplacingOccurrencesOfString("\u{200B}·\u{200B}", withString: " - ") {
+                dateLabel.accessibilityLabel = accessibilityText.characters.reduce("",
+                    combine: {String($0) + String($1) + ". "})
+            }
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -29,6 +44,9 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        dateOrder = NSLocale.currentLocale().dateOrder()
+        
+        date = NSDate()
     }
     
     override func didReceiveMemoryWarning() {

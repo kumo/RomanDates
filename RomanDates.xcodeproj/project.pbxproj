@@ -25,6 +25,7 @@
 		631EA77F1402F8B1003FB021 /* RomanDatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631EA77D1402F8B1003FB021 /* RomanDatesViewController.m */; };
 		BF2EECCF19AB9E980016FB16 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EECCE19AB9E980016FB16 /* BannerViewController.m */; };
 		BF3C1F421BE28297003FD66F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C1F411BE28297003FD66F /* MainViewController.swift */; };
+		BF3C1F441BE28522003FD66F /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C1F431BE28522003FD66F /* Converter.swift */; };
 		BF99018D19DD9A9900E049B0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF99018C19DD9A9900E049B0 /* LaunchScreen.xib */; };
 		BFA5BAC519AB3D6D00743CCF /* RomanNumsActivityItemProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA5BAC419AB3D6D00743CCF /* RomanNumsActivityItemProvider.m */; };
 		BFBF785919ABA938007AB1B0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBF785819ABA938007AB1B0 /* Images.xcassets */; };
@@ -57,6 +58,7 @@
 		BF2EECCE19AB9E980016FB16 /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
 		BF3C1F401BE28297003FD66F /* RomanDates-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RomanDates-Bridging-Header.h"; sourceTree = "<group>"; };
 		BF3C1F411BE28297003FD66F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BF3C1F431BE28522003FD66F /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		BF99018C19DD9A9900E049B0 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		BFA5BAC319AB3D6D00743CCF /* RomanNumsActivityItemProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RomanNumsActivityItemProvider.h; sourceTree = "<group>"; };
 		BFA5BAC419AB3D6D00743CCF /* RomanNumsActivityItemProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RomanNumsActivityItemProvider.m; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				BFBF785819ABA938007AB1B0 /* Images.xcassets */,
 				631EA7211402E7CF003FB021 /* Supporting Files */,
 				BF3C1F401BE28297003FD66F /* RomanDates-Bridging-Header.h */,
+				BF3C1F431BE28522003FD66F /* Converter.swift */,
 			);
 			name = RomanDates;
 			path = BasicBanner;
@@ -228,6 +231,7 @@
 			files = (
 				BF3C1F421BE28297003FD66F /* MainViewController.swift in Sources */,
 				631EA7271402E7CF003FB021 /* main.m in Sources */,
+				BF3C1F441BE28522003FD66F /* Converter.swift in Sources */,
 				BFA5BAC519AB3D6D00743CCF /* RomanNumsActivityItemProvider.m in Sources */,
 				BF2EECCF19AB9E980016FB16 /* BannerViewController.m in Sources */,
 				631EA72B1402E7CF003FB021 /* AppDelegate.m in Sources */,
