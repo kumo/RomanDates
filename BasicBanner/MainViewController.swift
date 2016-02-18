@@ -65,10 +65,21 @@ class MainViewController: UIViewController {
         if  let text = self.dateLabel.text,
             let navigation = self.navigationController
         {
-            let firstActivityItem = text
-            //let secondActivityItem = NSURL(string: "https://itunes.apple.com/us/app/id912520382?mt=8")!
+            let textActivityItem = text
+            //let linkActivityItem = NSURL(string: "https://itunes.apple.com/us/app/id912520382?mt=8")!
             
-            let activityViewController : UIActivityViewController = UIActivityViewController(activityItems: [firstActivityItem/*, secondActivityItem*/], applicationActivities: nil)
+            UIGraphicsBeginImageContextWithOptions(self.dateLabel.bounds.size, true, UIScreen.mainScreen().scale)
+            
+            //self.view!.drawViewHierarchyInRect(self.view!.bounds, afterScreenUpdates: true)
+            self.dateLabel.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+            
+            let screenshot = UIGraphicsGetImageFromCurrentImageContext()
+            
+            UIGraphicsEndImageContext()
+            
+            let pngActivityItem = UIImagePNGRepresentation(screenshot)!
+
+            let activityViewController : UIActivityViewController = UIActivityViewController(activityItems: [textActivityItem, pngActivityItem], applicationActivities: nil)
             
             if self.respondsToSelector("popoverPresentationController") {
                 // iOS 8+
