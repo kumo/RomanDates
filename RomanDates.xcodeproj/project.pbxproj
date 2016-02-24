@@ -361,7 +361,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "it.kumo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = RomanDates;
-				PROVISIONING_PROFILE = "2a7fca7b-b184-44d8-a722-75b16f64efdc";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BasicBanner/RomanDates-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -382,8 +382,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "it.kumo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = RomanDates;
-				PROVISIONING_PROFILE = "2a7fca7b-b184-44d8-a722-75b16f64efdc";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BasicBanner/RomanDates-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
