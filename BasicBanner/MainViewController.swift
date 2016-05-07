@@ -81,13 +81,8 @@ class MainViewController: UIViewController {
 
             let activityViewController : UIActivityViewController = UIActivityViewController(activityItems: [textActivityItem, pngActivityItem], applicationActivities: nil)
             
-            if self.respondsToSelector("popoverPresentationController") {
-                // iOS 8+
-                if #available(iOS 8.0, *) {
-                    activityViewController.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
-                } else {
-                    // Fallback on earlier versions
-                }
+            if self.respondsToSelector(Selector("popoverPresentationController")) {
+                activityViewController.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
             }
             
             navigation.presentViewController(activityViewController, animated: true, completion: nil)
