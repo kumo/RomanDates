@@ -53,7 +53,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[Fabric sharedSDK] setDebug: YES];
+    //[[Fabric sharedSDK] setDebug: YES];
     [Fabric with:@[[Crashlytics class]]];
     return YES;
 }
