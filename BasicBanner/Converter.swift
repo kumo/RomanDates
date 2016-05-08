@@ -54,7 +54,7 @@ extension NSDate {
 }
 
 public extension NSLocale {
-    enum DateOrder {
+    enum DateOrder: String {
         case DayFirst, MonthFirst, YearFirst
     }
     
