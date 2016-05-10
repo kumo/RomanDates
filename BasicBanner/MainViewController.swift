@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Crashlytics
 
 class MainViewController: UIViewController {
     
@@ -81,13 +82,44 @@ class MainViewController: UIViewController {
 
             let activityViewController : UIActivityViewController = UIActivityViewController(activityItems: [textActivityItem, pngActivityItem], applicationActivities: nil)
             
-            if self.respondsToSelector("popoverPresentationController") {
-                // iOS 8+
-                if #available(iOS 8.0, *) {
-                    activityViewController.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
-                } else {
-                    // Fallback on earlier versions
+            activityViewController.completionWithItemsHandler = {(activityType, completed:Bool, returnedItems:[AnyObject]?, error: NSError?) in
+                
+                // Return if cancelled
+                if (!completed) {
+                    return
                 }
+                
+                //activity complete
+                //some code here
+                //print("Activity: \(activityType) Success: \(completed) Items: \(returnedItems) Error: \(error)")
+                
+                var activityName = ""
+                
+                guard let activity = activityType else {
+                    return
+                }
+                
+                switch activity {
+                case UIActivityTypePostToTwitter: activityName = "Twitter"
+                case UIActivityTypePostToFacebook: activityName = "Facebook"
+                case UIActivityTypeMail: activityName = "Email"
+                case UIActivityTypeMessage: activityName = "Message"
+                case UIActivityTypePrint: activityName = "Print"
+                case UIActivityTypeSaveToCameraRoll: activityName = "CameraRoll"
+                case UIActivityTypePostToFlickr: activityName = "Flickr"
+                case UIActivityTypeAssignToContact: activityName = "Contact"
+                case UIActivityTypePostToWeibo: activityName = "Weibo"
+                case UIActivityTypePostToTencentWeibo: activityName = "TencentWeibo"
+                case UIActivityTypeAirDrop: activityName = "AirDrop"
+                case UIActivityTypeCopyToPasteboard: activityName = "Pasteboard"
+                default: activityName = activity
+                }
+                
+                Answers.logShareWithMethod(activityName, contentName: nil, contentType: nil, contentId: nil, customAttributes: ["dateOrder": self.dateOrder.rawValue])
+            }
+            
+            if self.respondsToSelector(Selector("popoverPresentationController")) {
+                activityViewController.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
             }
             
             navigation.presentViewController(activityViewController, animated: true, completion: nil)
