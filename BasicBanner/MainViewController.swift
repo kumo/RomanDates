@@ -9,6 +9,19 @@
 import UIKit
 import Crashlytics
 
+extension NSDate {
+    var dayAfter:NSDate {
+        let calendar =  NSCalendar.currentCalendar()
+        return calendar.dateByAddingUnit(NSCalendarUnit.Day, value: 1, toDate: self, options: [])!
+        
+    }
+    var dayBefore:NSDate {
+        //let calendar =  NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let calendar =  NSCalendar.currentCalendar()
+        return calendar.dateByAddingUnit(NSCalendarUnit.Day, value: -1, toDate: self, options: [])!
+    }
+}
+
 class MainViewController: UIViewController {
     
     @IBOutlet weak var dateLabel: UILabel!
@@ -36,6 +49,19 @@ class MainViewController: UIViewController {
                 UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, dateLabel.accessibilityLabel)
             }
         }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(handleShortcutNotification(_:)),
+                                                         name: "HandleShortcut",
+                                                         object: nil)
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     override func viewDidLoad() {
@@ -125,5 +151,24 @@ class MainViewController: UIViewController {
             navigation.presentViewController(activityViewController, animated: true, completion: nil)
         }
 
+    }
+    
+    func handleShortcutNotification(notification: NSNotification) {
+        guard let info = notification.userInfo else {
+            return
+        }
+        
+        guard let shortcutType = info["shortcut"] as? String else {
+            return
+        }
+        
+        switch shortcutType {
+        case "it.kumo.RomanDates.ShowToday": date = NSDate()
+        case "it.kumo.RomanDates.ShowYesterday": date = NSDate().dayBefore
+        case "it.kumo.RomanDates.ShowTomorrow": date = NSDate().dayAfter
+        default: date = NSDate()
+        }
+        
+        datePicker.date = date
     }
 }

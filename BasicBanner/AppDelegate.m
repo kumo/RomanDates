@@ -55,7 +55,40 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //[[Fabric sharedSDK] setDebug: YES];
     [Fabric with:@[[Crashlytics class]]];
+    
+    UIApplicationShortcutItem *shortcutItem = [launchOptions objectForKey:UIApplicationLaunchOptionsShortcutItemKey];
+    
+    if (shortcutItem != nil) {
+        [self handleShortCutItem:shortcutItem];
+        return NO;
+    }
     return YES;
+}
+
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
+    
+    [self handleShortCutItem:shortcutItem];
+}
+
+- (BOOL)handleShortCutItem:(UIApplicationShortcutItem *)shortcutItem {
+    BOOL handled = NO;
+    
+    if (shortcutItem == nil) {
+        return NO;
+    }
+    
+    NSDictionary *dictionary =
+    [[NSDictionary alloc] initWithObjectsAndKeys:
+     shortcutItem.type, @"shortcut", nil];
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"HandleShortcut" object:self userInfo:dictionary];
+
+    handled = YES;
+    /*UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"Handle Shortcut" message:shortcutItem.type delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    [av show];*/
+    
+    return handled;
+    
 }
 
 @end
