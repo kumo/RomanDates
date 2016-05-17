@@ -47,7 +47,7 @@ extension NSDate {
         let day = components.day
         let year = components.year
         
-        print("Date is \(day.toRoman()) - \(month.toRoman())")
+        //print("Date is \(day.toRoman()) - \(month.toRoman())")
         
         return (day.toRoman()!, month.toRoman()!, year.toRoman()!)
     }
