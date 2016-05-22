@@ -53,7 +53,6 @@
 		631EA71E1402E7CF003FB021 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		631EA7221402E7CF003FB021 /* RomanDates-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RomanDates-Info.plist"; sourceTree = "<group>"; };
 		631EA7241402E7CF003FB021 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		631EA7281402E7CF003FB021 /* RomanDates-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RomanDates-Prefix.pch"; sourceTree = "<group>"; };
 		631EA76D1402E8A3003FB021 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		BF3C1F401BE28297003FD66F /* RomanDates-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RomanDates-Bridging-Header.h"; sourceTree = "<group>"; };
 		BF3C1F411BE28297003FD66F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -150,7 +149,6 @@
 				BF99018C19DD9A9900E049B0 /* LaunchScreen.xib */,
 				631EA7221402E7CF003FB021 /* RomanDates-Info.plist */,
 				631EA7231402E7CF003FB021 /* InfoPlist.strings */,
-				631EA7281402E7CF003FB021 /* RomanDates-Prefix.pch */,
 				53202C5117286BF500BB02BD /* MainStoryboard.storyboard */,
 				533396151745525C0024FF41 /* Default.png */,
 				533396161745525C0024FF41 /* Default@2x.png */,
