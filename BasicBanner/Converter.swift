@@ -8,6 +8,10 @@
 
 import Foundation
 
+public enum DateOrder: Int {
+    case DayFirst, MonthFirst, YearFirst
+}
+
 extension Int {
     func toRoman() -> String? {
         var number = self
@@ -54,9 +58,6 @@ extension NSDate {
 }
 
 public extension NSLocale {
-    enum DateOrder: String {
-        case DayFirst, MonthFirst, YearFirst
-    }
     
     func dateOrder() -> DateOrder {
         guard let formatter = NSDateFormatter.dateFormatFromTemplate("MMMMdY", options: 0, locale: self) else {

@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    var dateOrder: NSLocale.DateOrder = .DayFirst
+    var dateOrder: DateOrder = .DayFirst
 
     private var date = NSDate() {
         didSet {
@@ -74,7 +74,11 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        dateOrder = NSLocale.currentLocale().dateOrder()
+        if AppConfiguration.sharedConfiguration.automaticDateFormat {
+            dateOrder = NSLocale.currentLocale().dateOrder()
+        } else {
+            dateOrder = AppConfiguration.sharedConfiguration.dateFormat
+        }
         
         date = NSDate()
     }

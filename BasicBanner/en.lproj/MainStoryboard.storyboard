@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="TjI-Xk-G0B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="uOr-XQ-z2Y">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Roman Dates-->
@@ -82,39 +82,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="38R-oR-mQl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="519" y="-652"/>
-        </scene>
-        <!--Banner View Controller-->
-        <scene sceneID="JcV-gV-gdU">
-            <objects>
-                <viewController id="TjI-Xk-G0B" customClass="BannerViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="N9w-8j-RwJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="EUw-DC-IVl"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="NK8-IU-aUG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWW-z5-1L4">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="uOr-XQ-z2Y" kind="embed" id="zgA-JT-vYc"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="BWW-z5-1L4" firstAttribute="top" secondItem="NK8-IU-aUG" secondAttribute="top" id="0co-rn-CA0"/>
-                            <constraint firstItem="BWW-z5-1L4" firstAttribute="bottom" secondItem="NK8-IU-aUG" secondAttribute="bottom" id="8i8-0D-cZu"/>
-                            <constraint firstItem="BWW-z5-1L4" firstAttribute="leading" secondItem="NK8-IU-aUG" secondAttribute="leading" id="UT2-av-zMp"/>
-                            <constraint firstItem="BWW-z5-1L4" firstAttribute="trailing" secondItem="NK8-IU-aUG" secondAttribute="trailing" id="mOn-cr-YE6"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Cm-q5-29K" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="85" y="-652"/>
         </scene>
     </scenes>
 </document>
