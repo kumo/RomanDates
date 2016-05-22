@@ -15,7 +15,8 @@ public class AppConfiguration {
         static let showFullYearKey = "AppConfiguration.Defaults.showFullYearKey"
         static let automaticDateFormatKey = "AppConfiguration.Defaults.automaticDateFormatKey"
         static let dateFormatKey = "AppConfiguration.Defaults.dateFormatKey"
-        static let usePasteboardKey = "AppConfiguration.Defaults.UsePasteboardKey"
+        static let usePasteboardKey = "AppConfiguration.Defaults.usePasteboardKey"
+        static let separatorSymbolKey = "AppConfiguration.Defaults.separatorSymbolKey"
     }
     
     public class var sharedConfiguration: AppConfiguration {
@@ -35,7 +36,8 @@ public class AppConfiguration {
             Defaults.showFullYearKey: true,
             Defaults.automaticDateFormatKey: true,
             Defaults.dateFormatKey: 0,
-            Defaults.usePasteboardKey: true
+            Defaults.usePasteboardKey: true,
+            Defaults.separatorSymbolKey: 0
         ]
         
         defaults.registerDefaults(defaultOptions)
@@ -110,5 +112,21 @@ public class AppConfiguration {
             NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: Defaults.usePasteboardKey)
         }
     }
-    
+
+    public var separatorSymbol: SeparatorSymbol {
+        get {
+            let value = NSUserDefaults.standardUserDefaults().integerForKey(Defaults.separatorSymbolKey)
+
+            guard let symbol = SeparatorSymbol(rawValue: value) else {
+                return SeparatorSymbol.Dot
+            }
+
+            return symbol
+        }
+
+        set {
+            NSUserDefaults.standardUserDefaults().setObject(newValue.rawValue, forKey: Defaults.separatorSymbolKey)
+        }
+    }
+
 }

@@ -10,6 +10,34 @@ import Foundation
 
 public enum DateOrder: Int {
     case DayFirst, MonthFirst, YearFirst
+
+    var locale: NSLocale {
+        get {
+            switch self {
+            case .DayFirst:
+                return NSLocale.init(localeIdentifier: "en-GB")
+            case .MonthFirst:
+                return NSLocale.init(localeIdentifier: "en-US")
+            case .YearFirst:
+                return NSLocale.init(localeIdentifier: "ja-JP")
+            }
+        }
+    }
+}
+
+public enum SeparatorSymbol: Int {
+    case Dot, Dash, Slash, Space
+
+    var character: String {
+        get {
+            switch self {
+            case .Dot: return "·"
+            case .Dash: return "−"
+            case .Slash: return "/"
+            case .Space: return " "
+            }
+        }
+    }
 }
 
 extension Int {
@@ -42,7 +70,7 @@ extension Int {
 }
 
 extension NSDate {
-    func dateInRoman() -> (day:String, month:String, year:String) {
+    func dateInRoman() -> (day:String, month:String, year:String, shortYear:String) {
         
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components([.Year, .Month, .Day], fromDate: self)
@@ -50,10 +78,12 @@ extension NSDate {
         let month = components.month
         let day = components.day
         let year = components.year
-        
+        let shortYear = year % 100
+
+
         //print("Date is \(day.toRoman()) - \(month.toRoman())")
         
-        return (day.toRoman()!, month.toRoman()!, year.toRoman()!)
+        return (day.toRoman()!, month.toRoman()!, year.toRoman()!, shortYear.toRoman()!)
     }
 }
 

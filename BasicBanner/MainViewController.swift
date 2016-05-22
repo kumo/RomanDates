@@ -32,17 +32,34 @@ class MainViewController: UIViewController {
     private var date = NSDate() {
         didSet {
             let parts = date.dateInRoman()
-            
+
+            var text = ""
+            let separatorSymbol = AppConfiguration.sharedConfiguration.separatorSymbol.character
+
             switch dateOrder {
             case .DayFirst:
-                dateLabel.text = parts.day + "\u{200B}·\u{200B}" + parts.month + "\u{200B}·\u{200B}" + parts.year
+                text = parts.day + "\u{200B}\(separatorSymbol)\u{200B}" + parts.month
+
+                if AppConfiguration.sharedConfiguration.showYear {
+                    text = text + "\u{200B}\(separatorSymbol)\u{200B}" + (AppConfiguration.sharedConfiguration.showFullYear ? parts.year : parts.shortYear)
+                }
             case .MonthFirst:
-                dateLabel.text = parts.month + "\u{200B}·\u{200B}" + parts.day + "\u{200B}·\u{200B}" + parts.year
+                text = parts.month + "\u{200B}\(separatorSymbol)\u{200B}" + parts.day
+
+                if AppConfiguration.sharedConfiguration.showYear {
+                    text = text + "\u{200B}\(separatorSymbol)\u{200B}" + (AppConfiguration.sharedConfiguration.showFullYear ? parts.year : parts.shortYear)
+                }
             case .YearFirst:
-                dateLabel.text = parts.year + "\u{200B}·\u{200B}" + parts.month + "\u{200B}·\u{200B}" + parts.day
+                text = parts.month + "\u{200B}\(separatorSymbol)\u{200B}" + parts.day
+
+                if AppConfiguration.sharedConfiguration.showYear {
+                    text = (AppConfiguration.sharedConfiguration.showFullYear ? parts.year : parts.shortYear) +  "\u{200B}\(separatorSymbol)\u{200B}" + text
+                }
             }
+
+            dateLabel.text = text
             
-            if let accessibilityText = dateLabel.text?.stringByReplacingOccurrencesOfString("\u{200B}·\u{200B}", withString: " - ") {
+            if let accessibilityText = dateLabel.text?.stringByReplacingOccurrencesOfString("\u{200B}\(separatorSymbol)\u{200B}", withString: " - ") {
                 dateLabel.accessibilityLabel = accessibilityText.characters.reduce("",
                     combine: {String($0) + String($1) + ". "})
                 

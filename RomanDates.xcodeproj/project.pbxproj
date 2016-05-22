@@ -22,6 +22,14 @@
 		631EA76E1402E8A3003FB021 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631EA76D1402E8A3003FB021 /* iAd.framework */; };
 		BF3C1F421BE28297003FD66F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C1F411BE28297003FD66F /* MainViewController.swift */; };
 		BF3C1F441BE28522003FD66F /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C1F431BE28522003FD66F /* Converter.swift */; };
+		BF6770401CF1A80F00A437AF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6770381CF1A80F00A437AF /* SettingsViewController.swift */; };
+		BF6770411CF1A80F00A437AF /* ConverterSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6770391CF1A80F00A437AF /* ConverterSettingsViewController.swift */; };
+		BF6770421CF1A80F00A437AF /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67703A1CF1A80F00A437AF /* AboutViewController.swift */; };
+		BF6770431CF1A80F00A437AF /* WhatsNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67703B1CF1A80F00A437AF /* WhatsNewViewController.swift */; };
+		BF6770441CF1A80F00A437AF /* RomanDatesProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67703C1CF1A80F00A437AF /* RomanDatesProducts.swift */; };
+		BF6770451CF1A80F00A437AF /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67703D1CF1A80F00A437AF /* ProductCell.swift */; };
+		BF6770461CF1A80F00A437AF /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67703E1CF1A80F00A437AF /* ProductsViewController.swift */; };
+		BF6770471CF1A80F00A437AF /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67703F1CF1A80F00A437AF /* IAPHelper.swift */; };
 		BF951C301CDEA0C400D3D0AE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF951C2E1CDEA0C400D3D0AE /* Fabric.framework */; };
 		BF951C311CDEA0C400D3D0AE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF951C2F1CDEA0C400D3D0AE /* Crashlytics.framework */; };
 		BF99018D19DD9A9900E049B0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF99018C19DD9A9900E049B0 /* LaunchScreen.xib */; };
@@ -50,6 +58,14 @@
 		BF3C1F401BE28297003FD66F /* RomanDates-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RomanDates-Bridging-Header.h"; sourceTree = "<group>"; };
 		BF3C1F411BE28297003FD66F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BF3C1F431BE28522003FD66F /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		BF6770381CF1A80F00A437AF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BF6770391CF1A80F00A437AF /* ConverterSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConverterSettingsViewController.swift; sourceTree = "<group>"; };
+		BF67703A1CF1A80F00A437AF /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		BF67703B1CF1A80F00A437AF /* WhatsNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhatsNewViewController.swift; sourceTree = "<group>"; };
+		BF67703C1CF1A80F00A437AF /* RomanDatesProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RomanDatesProducts.swift; sourceTree = "<group>"; };
+		BF67703D1CF1A80F00A437AF /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		BF67703E1CF1A80F00A437AF /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		BF67703F1CF1A80F00A437AF /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		BF951C2E1CDEA0C400D3D0AE /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		BF951C2F1CDEA0C400D3D0AE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		BF99018C19DD9A9900E049B0 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -110,8 +126,16 @@
 			children = (
 				BFE232911CF11E07000E7079 /* AppDelegate.swift */,
 				BFE232931CF11E61000E7079 /* AppConfiguration.swift */,
-				BF3C1F411BE28297003FD66F /* MainViewController.swift */,
 				BF3C1F431BE28522003FD66F /* Converter.swift */,
+				BF3C1F411BE28297003FD66F /* MainViewController.swift */,
+				BF67703A1CF1A80F00A437AF /* AboutViewController.swift */,
+				BF6770381CF1A80F00A437AF /* SettingsViewController.swift */,
+				BF6770391CF1A80F00A437AF /* ConverterSettingsViewController.swift */,
+				BF67703B1CF1A80F00A437AF /* WhatsNewViewController.swift */,
+				BF67703C1CF1A80F00A437AF /* RomanDatesProducts.swift */,
+				BF67703D1CF1A80F00A437AF /* ProductCell.swift */,
+				BF67703E1CF1A80F00A437AF /* ProductsViewController.swift */,
+				BF67703F1CF1A80F00A437AF /* IAPHelper.swift */,
 				BFBF785819ABA938007AB1B0 /* Images.xcassets */,
 				631EA7211402E7CF003FB021 /* Supporting Files */,
 				BF3C1F401BE28297003FD66F /* RomanDates-Bridging-Header.h */,
@@ -233,9 +257,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF3C1F421BE28297003FD66F /* MainViewController.swift in Sources */,
+				BF6770441CF1A80F00A437AF /* RomanDatesProducts.swift in Sources */,
 				BF3C1F441BE28522003FD66F /* Converter.swift in Sources */,
 				BFE232941CF11E61000E7079 /* AppConfiguration.swift in Sources */,
+				BF6770471CF1A80F00A437AF /* IAPHelper.swift in Sources */,
+				BF6770461CF1A80F00A437AF /* ProductsViewController.swift in Sources */,
+				BF6770421CF1A80F00A437AF /* AboutViewController.swift in Sources */,
+				BF6770401CF1A80F00A437AF /* SettingsViewController.swift in Sources */,
+				BF6770411CF1A80F00A437AF /* ConverterSettingsViewController.swift in Sources */,
+				BF6770451CF1A80F00A437AF /* ProductCell.swift in Sources */,
 				BFE232921CF11E07000E7079 /* AppDelegate.swift in Sources */,
+				BF6770431CF1A80F00A437AF /* WhatsNewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
