@@ -28,11 +28,10 @@ class ConverterSettingsViewController: UITableViewController {
     @IBOutlet weak var dateOrderCell: UITableViewCell!
     @IBOutlet weak var showYearCell: UITableViewCell!
     @IBOutlet weak var showYearInFullCell: UITableViewCell!
-
     @IBOutlet weak var dateOrderSegment: UISegmentedControl!
-
     @IBOutlet weak var symbolCell: UITableViewCell!
     @IBOutlet weak var symbolSegment: UISegmentedControl!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -121,6 +120,7 @@ extension ConverterSettingsViewController {
 
         self.dateOrderCell.appearEnabled(!sender.on)
 
+        // show the current locale if it is automatic
         if sender.on {
             dateOrderSegment.selectedSegmentIndex = NSLocale.currentLocale().dateOrder().rawValue
         } else {
@@ -140,6 +140,7 @@ extension ConverterSettingsViewController {
 
 }
 
+// MARK: - Segment events
 extension ConverterSettingsViewController {
 
     func dateOrderSegmentChanged(sender: UISegmentedControl!) {

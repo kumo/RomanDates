@@ -51,22 +51,24 @@ class AboutViewController: UITableViewController, MFMailComposeViewControllerDel
             }
         } else if (indexPath.section == 1) {
             if (indexPath.row == 0)  {
-                if let url = NSURL(string: "http://cadigatt.com/numbery/support/") {
+                if let url = NSURL(string: "http://cadigatt.com/romandates/support/") {
                     UIApplication.sharedApplication().openURL(url)
                 }
             } else if (indexPath.row == 1) {
-                self.openTwitter("NumberyApp")
+                self.openTwitter("cadigatt")
             } else if (indexPath.row == 2) {
+                self.openTwitter("RomanNumsApp")
+            } else if (indexPath.row == 3) {
                 if MFMailComposeViewController.canSendMail()
                 {
                     if let version = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String {
-                        let label = "Numbery, v" + version
+                        let label = "Roman Dates, v" + version
                         
                         let mailer = MFMailComposeViewController()
                         mailer.mailComposeDelegate = self
                         
-                        mailer.setSubject("Numbery")
-                        mailer.setToRecipients(["support+numberyapp@cadigatt.com"])
+                        mailer.setSubject("Roman Dates")
+                        mailer.setToRecipients(["support+romandates@cadigatt.com"])
                         
                         mailer.setMessageBody("\n\n" + label, isHTML: false)
                         
@@ -75,7 +77,7 @@ class AboutViewController: UITableViewController, MFMailComposeViewControllerDel
                 }
                 else
                 {
-                    if let url = NSURL(string: "mailto:support+numberyapp@cadigatt.com?subject=Numbery") {
+                    if let url = NSURL(string: "mailto:support+romandates@cadigatt.com?subject=RomanDates") {
                         UIApplication.sharedApplication().openURL(url)
                     }
                 }
