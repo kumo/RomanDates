@@ -8,19 +8,22 @@
 
 import Foundation
 
+public enum DateOrder: Int {
+    case DayFirst, MonthFirst, YearFirst
+}
+
 extension Int {
     func toRoman() -> String? {
-        var number = self
-        
-        if (number < 1) {
+        guard self > 0 else {
             return nil
         }
+
+        var number = self
         
         let values = [("M", 1000), ("CM", 900), ("D", 500), ("CD", 400), ("C",100), ("XC", 90), ("L",50), ("XL",40), ("X",10), ("IX", 9), ("V",5),("IV",4), ("I",1)]
         
         var result = ""
-        
-        
+
         for (romanChar, arabicValue) in values {
             let count = number / arabicValue
             
@@ -38,7 +41,7 @@ extension Int {
 }
 
 extension NSDate {
-    func dateInRoman() -> (day:String, month:String, year:String) {
+    func dateInRoman() -> (day:String, month:String, year:String, shortYear:String) {
         
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components([.Year, .Month, .Day], fromDate: self)
@@ -46,17 +49,25 @@ extension NSDate {
         let month = components.month
         let day = components.day
         let year = components.year
-        
-        //print("Date is \(day.toRoman()) - \(month.toRoman())")
-        
-        return (day.toRoman()!, month.toRoman()!, year.toRoman()!)
+        let shortYear = year % 100
+
+        return (day.toRoman()!, month.toRoman()!, year.toRoman()!, shortYear.toRoman()!)
     }
+
+    var dayAfter:NSDate {
+        let calendar =  NSCalendar.currentCalendar()
+        return calendar.dateByAddingUnit(NSCalendarUnit.Day, value: 1, toDate: self, options: [])!
+
+    }
+    var dayBefore:NSDate {
+        //let calendar =  NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let calendar =  NSCalendar.currentCalendar()
+        return calendar.dateByAddingUnit(NSCalendarUnit.Day, value: -1, toDate: self, options: [])!
+    }
+
 }
 
 public extension NSLocale {
-    enum DateOrder: String {
-        case DayFirst, MonthFirst, YearFirst
-    }
     
     func dateOrder() -> DateOrder {
         guard let formatter = NSDateFormatter.dateFormatFromTemplate("MMMMdY", options: 0, locale: self) else {

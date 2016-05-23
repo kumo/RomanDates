@@ -9,40 +9,44 @@
 import UIKit
 import Crashlytics
 
-extension NSDate {
-    var dayAfter:NSDate {
-        let calendar =  NSCalendar.currentCalendar()
-        return calendar.dateByAddingUnit(NSCalendarUnit.Day, value: 1, toDate: self, options: [])!
-        
-    }
-    var dayBefore:NSDate {
-        //let calendar =  NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-        let calendar =  NSCalendar.currentCalendar()
-        return calendar.dateByAddingUnit(NSCalendarUnit.Day, value: -1, toDate: self, options: [])!
-    }
-}
-
 class MainViewController: UIViewController {
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    var dateOrder: NSLocale.DateOrder = .DayFirst
+    var dateOrder: DateOrder = .DayFirst
 
     private var date = NSDate() {
         didSet {
             let parts = date.dateInRoman()
-            
+
+            var text = ""
+            let separatorSymbol = AppConfiguration.sharedConfiguration.separatorSymbol.character
+
             switch dateOrder {
             case .DayFirst:
-                dateLabel.text = parts.day + "\u{200B}·\u{200B}" + parts.month + "\u{200B}·\u{200B}" + parts.year
+                text = parts.day + "\u{200B}\(separatorSymbol)\u{200B}" + parts.month
+
+                if AppConfiguration.sharedConfiguration.showYear {
+                    text = text + "\u{200B}\(separatorSymbol)\u{200B}" + (AppConfiguration.sharedConfiguration.showFullYear ? parts.year : parts.shortYear)
+                }
             case .MonthFirst:
-                dateLabel.text = parts.month + "\u{200B}·\u{200B}" + parts.day + "\u{200B}·\u{200B}" + parts.year
+                text = parts.month + "\u{200B}\(separatorSymbol)\u{200B}" + parts.day
+
+                if AppConfiguration.sharedConfiguration.showYear {
+                    text = text + "\u{200B}\(separatorSymbol)\u{200B}" + (AppConfiguration.sharedConfiguration.showFullYear ? parts.year : parts.shortYear)
+                }
             case .YearFirst:
-                dateLabel.text = parts.year + "\u{200B}·\u{200B}" + parts.month + "\u{200B}·\u{200B}" + parts.day
+                text = parts.month + "\u{200B}\(separatorSymbol)\u{200B}" + parts.day
+
+                if AppConfiguration.sharedConfiguration.showYear {
+                    text = (AppConfiguration.sharedConfiguration.showFullYear ? parts.year : parts.shortYear) +  "\u{200B}\(separatorSymbol)\u{200B}" + text
+                }
             }
+
+            dateLabel.text = text
             
-            if let accessibilityText = dateLabel.text?.stringByReplacingOccurrencesOfString("\u{200B}·\u{200B}", withString: " - ") {
+            if let accessibilityText = dateLabel.text?.stringByReplacingOccurrencesOfString("\u{200B}\(separatorSymbol)\u{200B}", withString: " - ") {
                 dateLabel.accessibilityLabel = accessibilityText.characters.reduce("",
                     combine: {String($0) + String($1) + ". "})
                 
@@ -74,7 +78,11 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        dateOrder = NSLocale.currentLocale().dateOrder()
+        if AppConfiguration.sharedConfiguration.automaticDateFormat {
+            dateOrder = NSLocale.currentLocale().dateOrder()
+        } else {
+            dateOrder = AppConfiguration.sharedConfiguration.dateFormat
+        }
         
         date = NSDate()
     }
@@ -161,14 +169,22 @@ class MainViewController: UIViewController {
         guard let shortcutType = info["shortcut"] as? String else {
             return
         }
-        
-        switch shortcutType {
-        case "it.kumo.RomanDates.ShowToday": date = NSDate()
-        case "it.kumo.RomanDates.ShowYesterday": date = NSDate().dayBefore
-        case "it.kumo.RomanDates.ShowTomorrow": date = NSDate().dayAfter
+
+        guard let shortcutItem = ShortcutItemType(fullIdentifier: shortcutType) else {
+            return
+        }
+
+        switch shortcutItem {
+        case .ConvertToday: date = NSDate()
+        case .ConvertYesterday: date = NSDate().dayBefore
+        case .ConvertTomorrow: date = NSDate().dayAfter
         default: date = NSDate()
         }
         
         datePicker.date = date
+    }
+
+    func convertDate(date: String) {
+
     }
 }
