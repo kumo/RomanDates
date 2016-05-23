@@ -10,49 +10,20 @@ import Foundation
 
 public enum DateOrder: Int {
     case DayFirst, MonthFirst, YearFirst
-
-    var locale: NSLocale {
-        get {
-            switch self {
-            case .DayFirst:
-                return NSLocale.init(localeIdentifier: "en-GB")
-            case .MonthFirst:
-                return NSLocale.init(localeIdentifier: "en-US")
-            case .YearFirst:
-                return NSLocale.init(localeIdentifier: "ja-JP")
-            }
-        }
-    }
-}
-
-public enum SeparatorSymbol: Int {
-    case Dot, Dash, Slash, Space
-
-    var character: String {
-        get {
-            switch self {
-            case .Dot: return "·"
-            case .Dash: return "−"
-            case .Slash: return "/"
-            case .Space: return " "
-            }
-        }
-    }
 }
 
 extension Int {
     func toRoman() -> String? {
-        var number = self
-        
-        if (number < 1) {
+        guard self > 0 else {
             return nil
         }
+
+        var number = self
         
         let values = [("M", 1000), ("CM", 900), ("D", 500), ("CD", 400), ("C",100), ("XC", 90), ("L",50), ("XL",40), ("X",10), ("IX", 9), ("V",5),("IV",4), ("I",1)]
         
         var result = ""
-        
-        
+
         for (romanChar, arabicValue) in values {
             let count = number / arabicValue
             
@@ -80,9 +51,6 @@ extension NSDate {
         let year = components.year
         let shortYear = year % 100
 
-
-        //print("Date is \(day.toRoman()) - \(month.toRoman())")
-        
         return (day.toRoman()!, month.toRoman()!, year.toRoman()!, shortYear.toRoman()!)
     }
 }

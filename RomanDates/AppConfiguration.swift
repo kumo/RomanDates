@@ -8,6 +8,21 @@
 
 import Foundation
 
+public enum SeparatorSymbol: Int {
+    case Dot, Dash, Slash, Space
+
+    var character: String {
+        get {
+            switch self {
+            case .Dot: return "·"
+            case .Dash: return "−"
+            case .Slash: return "/"
+            case .Space: return " "
+            }
+        }
+    }
+}
+
 public class AppConfiguration {
     private struct Defaults {
         static let firstLaunchKey = "AppConfiguration.Defaults.firstLaunchKey"

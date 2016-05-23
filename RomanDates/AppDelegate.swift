@@ -11,7 +11,9 @@ import Fabric
 import Crashlytics
 
 enum ShortcutItemType: String {
-    case ShowLastConverter
+    case ConvertToday
+    case ConvertYesterday
+    case ConvertTomorrow
     case ConvertPasteboard
     
     init?(fullIdentifier: String) {
