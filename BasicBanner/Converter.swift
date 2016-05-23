@@ -53,6 +53,18 @@ extension NSDate {
 
         return (day.toRoman()!, month.toRoman()!, year.toRoman()!, shortYear.toRoman()!)
     }
+
+    var dayAfter:NSDate {
+        let calendar =  NSCalendar.currentCalendar()
+        return calendar.dateByAddingUnit(NSCalendarUnit.Day, value: 1, toDate: self, options: [])!
+
+    }
+    var dayBefore:NSDate {
+        //let calendar =  NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let calendar =  NSCalendar.currentCalendar()
+        return calendar.dateByAddingUnit(NSCalendarUnit.Day, value: -1, toDate: self, options: [])!
+    }
+
 }
 
 public extension NSLocale {

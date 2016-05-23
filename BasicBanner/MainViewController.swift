@@ -9,19 +9,6 @@
 import UIKit
 import Crashlytics
 
-extension NSDate {
-    var dayAfter:NSDate {
-        let calendar =  NSCalendar.currentCalendar()
-        return calendar.dateByAddingUnit(NSCalendarUnit.Day, value: 1, toDate: self, options: [])!
-        
-    }
-    var dayBefore:NSDate {
-        //let calendar =  NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-        let calendar =  NSCalendar.currentCalendar()
-        return calendar.dateByAddingUnit(NSCalendarUnit.Day, value: -1, toDate: self, options: [])!
-    }
-}
-
 class MainViewController: UIViewController {
     
     @IBOutlet weak var dateLabel: UILabel!
@@ -182,14 +169,22 @@ class MainViewController: UIViewController {
         guard let shortcutType = info["shortcut"] as? String else {
             return
         }
-        
-        switch shortcutType {
-        case "it.kumo.RomanDates.ShowToday": date = NSDate()
-        case "it.kumo.RomanDates.ShowYesterday": date = NSDate().dayBefore
-        case "it.kumo.RomanDates.ShowTomorrow": date = NSDate().dayAfter
+
+        guard let shortcutItem = ShortcutItemType(fullIdentifier: shortcutType) else {
+            return
+        }
+
+        switch shortcutItem {
+        case .ConvertToday: date = NSDate()
+        case .ConvertYesterday: date = NSDate().dayBefore
+        case .ConvertTomorrow: date = NSDate().dayAfter
         default: date = NSDate()
         }
         
         datePicker.date = date
+    }
+
+    func convertDate(date: String) {
+
     }
 }
