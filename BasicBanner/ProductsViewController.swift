@@ -51,8 +51,8 @@ class ProductsViewController: UITableViewController {
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(ProductsViewController.reload), forControlEvents: .ValueChanged)
         
-        let restoreButton = UIBarButtonItem(title: "Restore", style: .Plain, target: self, action: #selector(ProductsViewController.restoreTapped(_:)))
-        navigationItem.rightBarButtonItem = restoreButton
+        /*let restoreButton = UIBarButtonItem(title: "Restore", style: .Plain, target: self, action: #selector(ProductsViewController.restoreTapped(_:)))
+        navigationItem.rightBarButtonItem = restoreButton*/
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ProductsViewController.handlePurchaseNotification(_:)),
                                                          name: IAPHelper.IAPHelperPurchaseNotification,
