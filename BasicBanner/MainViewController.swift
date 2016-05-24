@@ -175,40 +175,33 @@ class MainViewController: UIViewController {
     func presentDate() {
         let parts = date.dateInRoman()
 
-        var text = ""
-        let separatorSymbol = AppConfiguration.sharedConfiguration.separatorSymbol.character
+        var dateComponents: [String] = []
 
-        var year = ""
+        if dateOrder == .DayFirst {
+            dateComponents = [parts.day, parts.month]
+        } else {
+            dateComponents = [parts.month, parts.day]
+        }
 
-        // If we must show a short year, make sure that the short year exist (think 2000!)
         if AppConfiguration.sharedConfiguration.showYear {
+            var year = ""
+
+            // If we must show a short year, make sure that the short year exist (think 2000!)
             if let shortYear = parts.shortYear where AppConfiguration.sharedConfiguration.showFullYear == false {
                 year = shortYear
             } else {
                 year = parts.year
             }
-        }
 
-        switch dateOrder {
-        case .DayFirst:
-            text = parts.day + "\u{200B}\(separatorSymbol)\u{200B}" + parts.month
-
-            if AppConfiguration.sharedConfiguration.showYear {
-                text = text + "\u{200B}\(separatorSymbol)\u{200B}" + year
-            }
-        case .MonthFirst:
-            text = parts.month + "\u{200B}\(separatorSymbol)\u{200B}" + parts.day
-
-            if AppConfiguration.sharedConfiguration.showYear {
-                text = text + "\u{200B}\(separatorSymbol)\u{200B}" + year
-            }
-        case .YearFirst:
-            text = parts.month + "\u{200B}\(separatorSymbol)\u{200B}" + parts.day
-
-            if AppConfiguration.sharedConfiguration.showYear {
-                text = year + "\u{200B}\(separatorSymbol)\u{200B}" + text
+            if dateOrder == .YearFirst {
+                dateComponents.insert(year, atIndex: 0)
+            } else {
+                dateComponents.append(year)
             }
         }
+
+        let separatorSymbol =  "\u{200B}\(AppConfiguration.sharedConfiguration.separatorSymbol.character)\u{200B}"
+        let text = dateComponents.joinWithSeparator(separatorSymbol)
 
         dateLabel.text = text
 
