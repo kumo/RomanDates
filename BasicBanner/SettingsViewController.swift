@@ -49,7 +49,12 @@ class SettingsViewController: UITableViewController {
             let secondActivityItem = NSURL(string: "https://itunes.apple.com/us/app/id912520382?mt=8")!
             
             let activityViewController : UIActivityViewController = UIActivityViewController(activityItems: [firstActivityItem, secondActivityItem], applicationActivities: nil)
-            
+
+            if self.respondsToSelector(Selector("popoverPresentationController")) {
+                activityViewController.popoverPresentationController?.sourceView = self.tableView
+                activityViewController.popoverPresentationController?.sourceRect = self.tableView.rectForRowAtIndexPath(self.tableView.indexPathForSelectedRow!)
+            }
+
             navigation.presentViewController(activityViewController, animated: true, completion: nil)
         }
     }
