@@ -60,8 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         }
         
-        guard let currentPasteboardContents = UIPasteboard.generalPasteboard().string,
-            let _ = Int(currentPasteboardContents) else {
+        guard let _ = UIPasteboard.generalPasteboard().string else {
                 //print("There isn't a number of anything in pasteboard")
                 return
         }

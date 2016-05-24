@@ -41,7 +41,7 @@ extension Int {
 }
 
 extension NSDate {
-    func dateInRoman() -> (day:String, month:String, year:String, shortYear:String) {
+    func dateInRoman() -> (day:String, month:String, year:String, shortYear:String?) {
         
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components([.Year, .Month, .Day], fromDate: self)
@@ -51,7 +51,7 @@ extension NSDate {
         let year = components.year
         let shortYear = year % 100
 
-        return (day.toRoman()!, month.toRoman()!, year.toRoman()!, shortYear.toRoman()!)
+        return (day.toRoman()!, month.toRoman()!, year.toRoman()!, shortYear.toRoman())
     }
 
     var dayAfter:NSDate {

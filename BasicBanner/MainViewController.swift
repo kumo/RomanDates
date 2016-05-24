@@ -45,8 +45,10 @@ class MainViewController: UIViewController {
 
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
-    
+
     override func viewWillAppear(animated: Bool) {
         if AppConfiguration.sharedConfiguration.automaticDateFormat {
             dateOrder = NSLocale.currentLocale().dateOrder()
@@ -54,9 +56,21 @@ class MainViewController: UIViewController {
             dateOrder = AppConfiguration.sharedConfiguration.dateFormat
         }
 
-        presentDate()
+        if AppConfiguration.sharedConfiguration.usePasteboard {
+            showClipboardDateOrDate(date, clearPasteboard: true)
+        } else {
+            presentDate()
+        }
+
+        NSNotificationCenter
+            .defaultCenter()
+            .addObserver(
+                self,
+                selector: #selector(pasteboardChanged(_:)),
+                name: "NewPasteboard",
+                object: nil)
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -164,24 +178,35 @@ class MainViewController: UIViewController {
         var text = ""
         let separatorSymbol = AppConfiguration.sharedConfiguration.separatorSymbol.character
 
+        var year = ""
+
+        // If we must show a short year, make sure that the short year exist (think 2000!)
+        if AppConfiguration.sharedConfiguration.showYear {
+            if let shortYear = parts.shortYear where AppConfiguration.sharedConfiguration.showFullYear == false {
+                year = shortYear
+            } else {
+                year = parts.year
+            }
+        }
+
         switch dateOrder {
         case .DayFirst:
             text = parts.day + "\u{200B}\(separatorSymbol)\u{200B}" + parts.month
 
             if AppConfiguration.sharedConfiguration.showYear {
-                text = text + "\u{200B}\(separatorSymbol)\u{200B}" + (AppConfiguration.sharedConfiguration.showFullYear ? parts.year : parts.shortYear)
+                text = text + "\u{200B}\(separatorSymbol)\u{200B}" + year
             }
         case .MonthFirst:
             text = parts.month + "\u{200B}\(separatorSymbol)\u{200B}" + parts.day
 
             if AppConfiguration.sharedConfiguration.showYear {
-                text = text + "\u{200B}\(separatorSymbol)\u{200B}" + (AppConfiguration.sharedConfiguration.showFullYear ? parts.year : parts.shortYear)
+                text = text + "\u{200B}\(separatorSymbol)\u{200B}" + year
             }
         case .YearFirst:
             text = parts.month + "\u{200B}\(separatorSymbol)\u{200B}" + parts.day
 
             if AppConfiguration.sharedConfiguration.showYear {
-                text = (AppConfiguration.sharedConfiguration.showFullYear ? parts.year : parts.shortYear) +  "\u{200B}\(separatorSymbol)\u{200B}" + text
+                text = year + "\u{200B}\(separatorSymbol)\u{200B}" + text
             }
         }
 
@@ -194,4 +219,57 @@ class MainViewController: UIViewController {
             UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, dateLabel.accessibilityLabel)
         }
     }
+}
+
+// MARK: - Pasteboard
+extension MainViewController {
+
+    func detectDate(string: String) -> NSDate? {
+        let types: NSTextCheckingType = [.Date]
+        let detector = try? NSDataDetector(types: types.rawValue)
+        var dates: [NSDate] = []
+
+        detector?.enumerateMatchesInString(string, options: [], range: NSMakeRange(0, string.characters.count)) { (result, flags, _) in
+
+            if let date = result?.date {
+                dates.append(date)
+            }
+        }
+
+        guard let firstDate = dates.first else {
+            return nil
+        }
+
+        return firstDate
+    }
+
+    func showClipboardDateOrDate(date: NSDate, clearPasteboard: Bool) {
+
+        guard let currentPasteboardContents = UIPasteboard.generalPasteboard().string,
+              let pasteboardDate = detectDate(currentPasteboardContents) else {
+            self.date = date
+            return
+        }
+
+        self.date = pasteboardDate
+        self.datePicker.date = pasteboardDate
+
+        if clearPasteboard {
+            UIPasteboard.generalPasteboard().string = ""
+        }
+    }
+
+    @objc private func pasteboardChanged(notification: NSNotification) {
+
+        guard let currentPasteboardContents = UIPasteboard.generalPasteboard().string,
+            let pasteboardDate = detectDate(currentPasteboardContents) else {
+                return
+        }
+
+        self.date = pasteboardDate
+        self.datePicker.date = pasteboardDate
+
+        UIPasteboard.generalPasteboard().string = ""
+    }
+
 }
