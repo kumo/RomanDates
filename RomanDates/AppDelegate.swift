@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         guard let _ = UIPasteboard.generalPasteboard().string else {
-                //print("There isn't a number of anything in pasteboard")
+                //print("There isn't a string in the pasteboard")
                 return
         }
         
@@ -92,19 +92,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return false
         }
         
-        var text = ""
+        //var text = ""
         
-        if shortcutItem == ShortcutItemType.ConvertPasteboard {
+        /*if shortcutItem == ShortcutItemType.ConvertPasteboard {
             if  let currentPasteboardContents = UIPasteboard.generalPasteboard().string,
                 let _ = Int(currentPasteboardContents) {
                 text = currentPasteboardContents
             }
-        }
+        }*/
         
         if let window = self.window, rvc = window.rootViewController,
             mvc = rvc.childViewControllers.first as? MainViewController {
             // TODO: restore the date
             //mvc.restoreDate(text)
+            mvc.handleShortcut(shortcutItem)
         }
         
         return true

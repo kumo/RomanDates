@@ -18,6 +18,7 @@ class MainViewController: UIViewController {
 
     private var date = NSDate() {
         didSet {
+            datePicker.date = date
             presentDate()
         }
     }
@@ -25,10 +26,10 @@ class MainViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        NSNotificationCenter.defaultCenter().addObserver(self,
+        /*NSNotificationCenter.defaultCenter().addObserver(self,
                                                          selector: #selector(handleShortcutNotification(_:)),
                                                          name: "HandleShortcut",
-                                                         object: nil)
+                                                         object: nil)*/
     }
     
     deinit {
@@ -40,7 +41,6 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
 
         date = NSDate()
-        datePicker.date = date
     }
 
     override func viewWillDisappear(animated: Bool) {
@@ -57,7 +57,7 @@ class MainViewController: UIViewController {
         }
 
         if AppConfiguration.sharedConfiguration.usePasteboard {
-            showClipboardDateOrDate(date, clearPasteboard: true)
+            showClipboardDateOrDate(date)
         } else {
             presentDate()
         }
@@ -145,31 +145,14 @@ class MainViewController: UIViewController {
 
     }
     
-    func handleShortcutNotification(notification: NSNotification) {
-        guard let info = notification.userInfo else {
-            return
-        }
-        
-        guard let shortcutType = info["shortcut"] as? String else {
-            return
-        }
-
-        guard let shortcutItem = ShortcutItemType(fullIdentifier: shortcutType) else {
-            return
-        }
-
-        switch shortcutItem {
+    @available(iOS 9.0, *)
+    func handleShortcut(shortcutItemType: ShortcutItemType) {
+        switch shortcutItemType {
         case .ConvertToday: date = NSDate()
         case .ConvertYesterday: date = NSDate().dayBefore
         case .ConvertTomorrow: date = NSDate().dayAfter
-        default: date = NSDate()
+        case .ConvertPasteboard: showClipboardDateOrDate(NSDate())
         }
-        
-        datePicker.date = date
-    }
-
-    func convertDate(date: String) {
-
     }
 
     func presentDate() {
@@ -236,7 +219,7 @@ extension MainViewController {
         return firstDate
     }
 
-    func showClipboardDateOrDate(date: NSDate, clearPasteboard: Bool) {
+    func showClipboardDateOrDate(date: NSDate) {
 
         guard let currentPasteboardContents = UIPasteboard.generalPasteboard().string,
               let pasteboardDate = detectDate(currentPasteboardContents) else {
@@ -245,11 +228,6 @@ extension MainViewController {
         }
 
         self.date = pasteboardDate
-        self.datePicker.date = pasteboardDate
-
-        if clearPasteboard {
-            UIPasteboard.generalPasteboard().string = ""
-        }
     }
 
     @objc private func pasteboardChanged(notification: NSNotification) {
@@ -260,9 +238,6 @@ extension MainViewController {
         }
 
         self.date = pasteboardDate
-        self.datePicker.date = pasteboardDate
-
-        UIPasteboard.generalPasteboard().string = ""
     }
 
 }
