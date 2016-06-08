@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public enum DateOrder: Int {
     case DayFirst, MonthFirst, YearFirst
@@ -63,6 +64,30 @@ extension NSDate {
         //let calendar =  NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
         let calendar =  NSCalendar.currentCalendar()
         return calendar.dateByAddingUnit(NSCalendarUnit.Day, value: -1, toDate: self, options: [])!
+    }
+
+    func pasteboardDate() -> NSDate? {
+
+        guard let currentPasteboardContents = UIPasteboard.generalPasteboard().string else {
+            return nil
+        }
+
+        let types: NSTextCheckingType = [.Date]
+        let detector = try? NSDataDetector(types: types.rawValue)
+        var dates: [NSDate] = []
+
+        detector?.enumerateMatchesInString(currentPasteboardContents, options: [], range: NSMakeRange(0, currentPasteboardContents.characters.count)) { (result, flags, _) in
+
+            if let date = result?.date {
+                dates.append(date)
+            }
+        }
+
+        guard let firstDate = dates.first else {
+            return nil
+        }
+
+        return firstDate
     }
 
 }

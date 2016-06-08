@@ -151,7 +151,12 @@ class MainViewController: UIViewController {
         case .ConvertToday: date = NSDate()
         case .ConvertYesterday: date = NSDate().dayBefore
         case .ConvertTomorrow: date = NSDate().dayAfter
-        case .ConvertPasteboard: showClipboardDateOrDate(NSDate())
+        case .ConvertPasteboard:
+            if let pasteboardDate = NSDate().pasteboardDate() {
+                date = pasteboardDate
+            } else {
+                date = NSDate()
+            }
         }
     }
 
