@@ -9,7 +9,7 @@
 import UIKit
 import MessageUI
 
-class AboutViewController: UITableViewController, MFMailComposeViewControllerDelegate {
+class AboutViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,38 +59,13 @@ class AboutViewController: UITableViewController, MFMailComposeViewControllerDel
             } else if (indexPath.row == 2) {
                 self.openTwitter("RomanNumsApp")
             } else if (indexPath.row == 3) {
-                if MFMailComposeViewController.canSendMail()
-                {
-                    if let version = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String {
-                        let label = "Roman Dates, v" + version
-                        
-                        let mailer = MFMailComposeViewController()
-                        mailer.mailComposeDelegate = self
-                        
-                        mailer.setSubject("Roman Dates")
-                        mailer.setToRecipients(["support+romandates@cadigatt.com"])
-                        
-                        mailer.setMessageBody("\n\n" + label, isHTML: false)
-                        
-                        self.presentViewController(mailer, animated: true, completion: nil)
-                    }
-                }
-                else
-                {
-                    if let url = NSURL(string: "mailto:support+romandates@cadigatt.com?subject=RomanDates") {
-                        UIApplication.sharedApplication().openURL(url)
-                    }
-                }
+                self.composeEmail()
             }
         }
     }
 
-    // MARK: - Email
-    
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        controller.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
+
+
     // Mark: - Twitter
     
     func openTwitter(account: String) {
@@ -105,4 +80,39 @@ class AboutViewController: UITableViewController, MFMailComposeViewControllerDel
         }
     }
     
+}
+
+// MARK: - Email
+
+extension AboutViewController: MFMailComposeViewControllerDelegate {
+
+    func composeEmail() {
+        if MFMailComposeViewController.canSendMail()
+        {
+            if let version = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String {
+                let label = "Roman Dates, v" + version
+
+                let mailer = MFMailComposeViewController()
+                mailer.mailComposeDelegate = self
+
+                mailer.setSubject("Roman Dates")
+                mailer.setToRecipients(["support+romandates@cadigatt.com"])
+
+                mailer.setMessageBody("\n\n" + label, isHTML: false)
+
+                self.presentViewController(mailer, animated: true, completion: nil)
+            }
+        }
+        else
+        {
+            if let url = NSURL(string: "mailto:support+romandates@cadigatt.com?subject=RomanDates") {
+                UIApplication.sharedApplication().openURL(url)
+            }
+        }
+    }
+
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+
 }
