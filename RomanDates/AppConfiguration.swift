@@ -31,6 +31,7 @@ public class AppConfiguration {
         static let automaticDateFormatKey = "AppConfiguration.Defaults.automaticDateFormatKey"
         static let dateFormatKey = "AppConfiguration.Defaults.dateFormatKey"
         static let usePasteboardKey = "AppConfiguration.Defaults.usePasteboardKey"
+        static let pasteboardChangeCountKey = "AppConfiguration.Defaults.pasteboardChangeCountKey"
         static let separatorSymbolKey = "AppConfiguration.Defaults.separatorSymbolKey"
     }
     
@@ -52,6 +53,7 @@ public class AppConfiguration {
             Defaults.automaticDateFormatKey: true,
             Defaults.dateFormatKey: 0,
             Defaults.usePasteboardKey: true,
+            Defaults.pasteboardChangeCountKey: 0, // not so sure about this logic
             Defaults.separatorSymbolKey: 0
         ]
         
@@ -125,6 +127,18 @@ public class AppConfiguration {
         
         set {
             NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: Defaults.usePasteboardKey)
+        }
+    }
+
+    public var pasteboardChangeCount: Int {
+        get {
+            let value = NSUserDefaults.standardUserDefaults().integerForKey(Defaults.pasteboardChangeCountKey)
+
+            return value
+        }
+
+        set {
+            NSUserDefaults.standardUserDefaults().setInteger(newValue, forKey: Defaults.pasteboardChangeCountKey)
         }
     }
 

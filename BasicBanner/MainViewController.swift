@@ -226,6 +226,15 @@ extension MainViewController {
 
     func showClipboardDateOrDate(date: NSDate) {
 
+        let changeCount = UIPasteboard.generalPasteboard().changeCount;
+
+        // Ensure that the pasteboard has changed
+        guard changeCount != AppConfiguration.sharedConfiguration.pasteboardChangeCount else {
+            self.date = date
+            return
+        }
+
+        // Ensure that the pasteboard has a date
         guard let currentPasteboardContents = UIPasteboard.generalPasteboard().string,
               let pasteboardDate = detectDate(currentPasteboardContents) else {
             self.date = date
@@ -233,6 +242,7 @@ extension MainViewController {
         }
 
         self.date = pasteboardDate
+        AppConfiguration.sharedConfiguration.pasteboardChangeCount = changeCount
     }
 
     @objc private func pasteboardChanged(notification: NSNotification) {

@@ -59,14 +59,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard AppConfiguration.sharedConfiguration.usePasteboard else {
             return
         }
+
+        let changeCount = UIPasteboard.generalPasteboard().changeCount;
+
+        //print("Change count is: ", changeCount);
         
         guard let _ = UIPasteboard.generalPasteboard().string else {
                 //print("There isn't a string in the pasteboard")
                 return
         }
-        
-        //print("There is a number in the pasteboard: \(currentPasteboardContents)")
-        NSNotificationCenter.defaultCenter().postNotificationName("NewPasteboard", object: nil)
+
+        // let's just assume that if the count is different, then we can use it
+        if changeCount != AppConfiguration.sharedConfiguration.pasteboardChangeCount {
+            //print("Using pasteboard")
+            AppConfiguration.sharedConfiguration.pasteboardChangeCount = changeCount
+            NSNotificationCenter.defaultCenter().postNotificationName("NewPasteboard", object: nil)
+        } else {
+            //print("Ignoring pasteboard")
+        }
     }
     
     func applicationDidBecomeActive(application: UIApplication) {
