@@ -34,7 +34,7 @@ class SettingsViewController: UITableViewController {
                     UIApplication.shared.openURL(url)
                 }
             }
-        } else if (indexPath.section == 3) {
+        } else if (indexPath.section == 2) {
             if (indexPath.row == 1) {
                 self.tellAFriend()
             } else if (indexPath.row == 2) {
@@ -60,7 +60,7 @@ class SettingsViewController: UITableViewController {
     }
 
     func openReview() {
-        if let reviewURL = URL(string: "itms-apps://itunes.apple.com/app/id912520382") {
+        if let reviewURL = URL(string: "itms-apps://itunes.apple.com/app/id912520382?action=write-review") {
             UIApplication.shared.openURL(reviewURL)
         }
     }

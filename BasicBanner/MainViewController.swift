@@ -8,6 +8,7 @@
 
 import UIKit
 import Crashlytics
+import StoreKit
 
 class MainViewController: UIViewController {
     
@@ -133,6 +134,12 @@ class MainViewController: UIViewController {
                 }
                 
                 Answers.logShare(withMethod: activityName, contentName: nil, contentType: nil, contentId: nil, customAttributes: ["dateOrder": self.dateOrder.rawValue])
+
+                if #available(iOS 10.3, *) {
+                    SKStoreReviewController.requestReview()
+                } else {
+                    // Fallback on earlier versions
+                };
             }
             
             if self.responds(to: #selector(getter: UIViewController.popoverPresentationController)) {
