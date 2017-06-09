@@ -60,7 +60,7 @@ class SettingsViewController: UITableViewController {
     }
 
     func openReview() {
-        if let reviewURL = URL(string: "itms-apps://itunes.apple.com/app/id912520382") {
+        if let reviewURL = URL(string: "itms-apps://itunes.apple.com/app/id912520382?action=write-review") {
             UIApplication.shared.openURL(reviewURL)
         }
     }
