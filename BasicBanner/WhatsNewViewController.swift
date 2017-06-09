@@ -27,9 +27,9 @@ class WhatsNewViewController: UIViewController {
     
     // Mark: - Review
     
-    @IBAction func openReview(sender: AnyObject) {
-        if let reviewURL = NSURL(string: "itms-apps://itunes.apple.com/app/id912520382") {
-            UIApplication.sharedApplication().openURL(reviewURL)
+    @IBAction func openReview(_ sender: AnyObject) {
+        if let reviewURL = URL(string: "itms-apps://itunes.apple.com/app/id912520382") {
+            UIApplication.shared.openURL(reviewURL)
         }
     }
     

@@ -9,11 +9,11 @@
 import UIKit
 
 extension UITableViewCell {
-    func appearEnabled(enabled: Bool) {
-        self.userInteractionEnabled = enabled
-        self.accessoryView?.userInteractionEnabled = enabled
+    func appearEnabled(_ enabled: Bool) {
+        self.isUserInteractionEnabled = enabled
+        self.accessoryView?.isUserInteractionEnabled = enabled
         self.accessoryView?.alpha = (enabled ? 1.0 : 0.5)
-        self.textLabel?.enabled = enabled
+        self.textLabel?.isEnabled = enabled
 
         for view in self.contentView.subviews {
             view.alpha = (enabled ? 1.0 : 0.5)
@@ -47,28 +47,28 @@ class ConverterSettingsViewController: UITableViewController {
     
     func configureView() {
         if let cell = self.automaticallyCopyFromPasteboardCell {
-            let switchView = UISwitch(frame: CGRectZero)
+            let switchView = UISwitch(frame: CGRect.zero)
             switchView.setOn(AppConfiguration.sharedConfiguration.usePasteboard, animated: false)
-            switchView.addTarget(self, action: #selector(automaticallyCopyFromPasteboardSwitchChanged), forControlEvents: UIControlEvents.ValueChanged)
+            switchView.addTarget(self, action: #selector(automaticallyCopyFromPasteboardSwitchChanged), for: UIControlEvents.valueChanged)
 
             cell.accessoryView = switchView
         }
 
         if let cell = self.useCurrentLocaleForDateCell {
-            let switchView = UISwitch(frame: CGRectZero)
+            let switchView = UISwitch(frame: CGRect.zero)
             switchView.setOn(AppConfiguration.sharedConfiguration.automaticDateFormat, animated: false)
-            switchView.addTarget(self, action: #selector(useCurrentLocaleForDateSwitchChanged), forControlEvents: UIControlEvents.ValueChanged)
+            switchView.addTarget(self, action: #selector(useCurrentLocaleForDateSwitchChanged), for: UIControlEvents.valueChanged)
 
             cell.accessoryView = switchView
         }
 
         if let cell = self.dateOrderCell,
            let segment = self.dateOrderSegment {
-            segment.addTarget(self, action: #selector(dateOrderSegmentChanged), forControlEvents: UIControlEvents.ValueChanged)
+            segment.addTarget(self, action: #selector(dateOrderSegmentChanged), for: UIControlEvents.valueChanged)
 
 
             if AppConfiguration.sharedConfiguration.automaticDateFormat {
-                dateOrderSegment.selectedSegmentIndex = NSLocale.currentLocale().dateOrder().rawValue
+                dateOrderSegment.selectedSegmentIndex = Locale.current.dateOrder().rawValue
             } else {
                 dateOrderSegment.selectedSegmentIndex = AppConfiguration.sharedConfiguration.dateFormat.rawValue
             }
@@ -77,17 +77,17 @@ class ConverterSettingsViewController: UITableViewController {
         }
 
         if let cell = self.showYearCell {
-            let switchView = UISwitch(frame: CGRectZero)
+            let switchView = UISwitch(frame: CGRect.zero)
             switchView.setOn(AppConfiguration.sharedConfiguration.showYear, animated: false)
-            switchView.addTarget(self, action: #selector(showYearSwitchChanged), forControlEvents: UIControlEvents.ValueChanged)
+            switchView.addTarget(self, action: #selector(showYearSwitchChanged), for: UIControlEvents.valueChanged)
             
             cell.accessoryView = switchView
         }
 
         if let cell = self.showYearInFullCell {
-            let switchView = UISwitch(frame: CGRectZero)
+            let switchView = UISwitch(frame: CGRect.zero)
             switchView.setOn(AppConfiguration.sharedConfiguration.showFullYear, animated: false)
-            switchView.addTarget(self, action: #selector(showYearInFullSwitchChanged), forControlEvents: UIControlEvents.ValueChanged)
+            switchView.addTarget(self, action: #selector(showYearInFullSwitchChanged), for: UIControlEvents.valueChanged)
 
             cell.accessoryView = switchView
 
@@ -95,7 +95,7 @@ class ConverterSettingsViewController: UITableViewController {
         }
 
         if let segment = self.symbolSegment {
-            segment.addTarget(self, action: #selector(symbolSegmentChanged), forControlEvents: UIControlEvents.ValueChanged)
+            segment.addTarget(self, action: #selector(symbolSegmentChanged), for: UIControlEvents.valueChanged)
 
             symbolSegment.selectedSegmentIndex = AppConfiguration.sharedConfiguration.separatorSymbol.rawValue
         }
@@ -111,31 +111,31 @@ class ConverterSettingsViewController: UITableViewController {
 // MARK: - Switch events
 extension ConverterSettingsViewController {
 
-    func automaticallyCopyFromPasteboardSwitchChanged(sender: UISwitch!) {
-        AppConfiguration.sharedConfiguration.usePasteboard = sender.on
+    func automaticallyCopyFromPasteboardSwitchChanged(_ sender: UISwitch!) {
+        AppConfiguration.sharedConfiguration.usePasteboard = sender.isOn
     }
 
-    func useCurrentLocaleForDateSwitchChanged(sender: UISwitch!) {
-        AppConfiguration.sharedConfiguration.automaticDateFormat = sender.on
+    func useCurrentLocaleForDateSwitchChanged(_ sender: UISwitch!) {
+        AppConfiguration.sharedConfiguration.automaticDateFormat = sender.isOn
 
-        self.dateOrderCell.appearEnabled(!sender.on)
+        self.dateOrderCell.appearEnabled(!sender.isOn)
 
         // show the current locale if it is automatic
-        if sender.on {
-            dateOrderSegment.selectedSegmentIndex = NSLocale.currentLocale().dateOrder().rawValue
+        if sender.isOn {
+            dateOrderSegment.selectedSegmentIndex = Locale.current.dateOrder().rawValue
         } else {
             dateOrderSegment.selectedSegmentIndex = AppConfiguration.sharedConfiguration.dateFormat.rawValue
         }
     }
 
-    func showYearSwitchChanged(sender: UISwitch!) {
-        AppConfiguration.sharedConfiguration.showYear = sender.on
+    func showYearSwitchChanged(_ sender: UISwitch!) {
+        AppConfiguration.sharedConfiguration.showYear = sender.isOn
 
-        self.showYearInFullCell.appearEnabled(sender.on)
+        self.showYearInFullCell.appearEnabled(sender.isOn)
     }
 
-    func showYearInFullSwitchChanged(sender: UISwitch!) {
-        AppConfiguration.sharedConfiguration.showFullYear = sender.on
+    func showYearInFullSwitchChanged(_ sender: UISwitch!) {
+        AppConfiguration.sharedConfiguration.showFullYear = sender.isOn
     }
 
 }
@@ -143,11 +143,11 @@ extension ConverterSettingsViewController {
 // MARK: - Segment events
 extension ConverterSettingsViewController {
 
-    func dateOrderSegmentChanged(sender: UISegmentedControl!) {
+    func dateOrderSegmentChanged(_ sender: UISegmentedControl!) {
         AppConfiguration.sharedConfiguration.dateFormat = DateOrder(rawValue: sender.selectedSegmentIndex)!
     }
 
-    func symbolSegmentChanged(sender: UISegmentedControl!) {
+    func symbolSegmentChanged(_ sender: UISegmentedControl!) {
         AppConfiguration.sharedConfiguration.separatorSymbol = SeparatorSymbol(rawValue: sender.selectedSegmentIndex)!
     }
 

@@ -10,19 +10,19 @@ import Foundation
 
 public struct RomanDatesProducts {
     
-    private static let Prefix = "it.kumo.RomanDates."
+    fileprivate static let Prefix = "it.kumo.RomanDates."
     
     public static let NiceTip = Prefix + "tip1"
     public static let GreatTip = Prefix + "tip2"
     public static let MassiveTip = Prefix + "tip5"
     
-    private static let productIdentifiers: Set<ProductIdentifier> = [RomanDatesProducts.NiceTip,
+    fileprivate static let productIdentifiers: Set<ProductIdentifier> = [RomanDatesProducts.NiceTip,
                                                                      RomanDatesProducts.GreatTip,
                                                                      RomanDatesProducts.MassiveTip]
     
     public static let store = IAPHelper(productIds: RomanDatesProducts.productIdentifiers)
 }
 
-func resourceNameForProductIdentifier(productIdentifier: String) -> String? {
-    return productIdentifier.componentsSeparatedByString(".").last
+func resourceNameForProductIdentifier(_ productIdentifier: String) -> String? {
+    return productIdentifier.components(separatedBy: ".").last
 }

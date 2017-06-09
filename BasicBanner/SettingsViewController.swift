@@ -27,11 +27,11 @@ class SettingsViewController: UITableViewController {
 
     // MARK: - Table view delegate
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (indexPath.section == 1) {
             if (indexPath.row == 0) {
-                if let url = NSURL(string: "http://cadigatt.com/romandates/support/") {
-                    UIApplication.sharedApplication().openURL(url)
+                if let url = URL(string: "http://cadigatt.com/romandates/support/") {
+                    UIApplication.shared.openURL(url)
                 }
             }
         } else if (indexPath.section == 3) {
@@ -46,26 +46,26 @@ class SettingsViewController: UITableViewController {
     func tellAFriend() {
         if let navigation = self.navigationController {
             let firstActivityItem = "Roman Dates is a universal app that lets you easily convert dates into Roman Numerals"
-            let secondActivityItem = NSURL(string: "https://itunes.apple.com/us/app/id912520382?mt=8")!
+            let secondActivityItem = URL(string: "https://itunes.apple.com/us/app/id912520382?mt=8")!
             
             let activityViewController : UIActivityViewController = UIActivityViewController(activityItems: [firstActivityItem, secondActivityItem], applicationActivities: nil)
 
-            if self.respondsToSelector(Selector("popoverPresentationController")) {
+            if self.responds(to: #selector(getter: UIViewController.popoverPresentationController)) {
                 activityViewController.popoverPresentationController?.sourceView = self.tableView
-                activityViewController.popoverPresentationController?.sourceRect = self.tableView.rectForRowAtIndexPath(self.tableView.indexPathForSelectedRow!)
+                activityViewController.popoverPresentationController?.sourceRect = self.tableView.rectForRow(at: self.tableView.indexPathForSelectedRow!)
             }
 
-            navigation.presentViewController(activityViewController, animated: true, completion: nil)
+            navigation.present(activityViewController, animated: true, completion: nil)
         }
     }
 
     func openReview() {
-        if let reviewURL = NSURL(string: "itms-apps://itunes.apple.com/app/id912520382") {
-            UIApplication.sharedApplication().openURL(reviewURL)
+        if let reviewURL = URL(string: "itms-apps://itunes.apple.com/app/id912520382") {
+            UIApplication.shared.openURL(reviewURL)
         }
     }
 
-    @IBAction func done(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func done(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
