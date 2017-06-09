@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 public enum DateOrder: Int {
-    case DayFirst, MonthFirst, YearFirst
+    case dayFirst, monthFirst, yearFirst
 }
 
 extension Int {
@@ -41,42 +41,42 @@ extension Int {
     }
 }
 
-extension NSDate {
+extension Date {
     func dateInRoman() -> (day:String, month:String, year:String, shortYear:String?) {
         
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components([.Year, .Month, .Day], fromDate: self)
+        let calendar = Calendar.current
+        let components = (calendar as NSCalendar).components([.year, .month, .day], from: self)
         
         let month = components.month
         let day = components.day
         let year = components.year
-        let shortYear = year % 100
+        let shortYear = year! % 100
 
-        return (day.toRoman()!, month.toRoman()!, year.toRoman()!, shortYear.toRoman())
+        return (day!.toRoman()!, month!.toRoman()!, year!.toRoman()!, shortYear.toRoman())
     }
 
-    var dayAfter:NSDate {
-        let calendar =  NSCalendar.currentCalendar()
-        return calendar.dateByAddingUnit(NSCalendarUnit.Day, value: 1, toDate: self, options: [])!
+    var dayAfter:Date {
+        let calendar =  Calendar.current
+        return (calendar as NSCalendar).date(byAdding: NSCalendar.Unit.day, value: 1, to: self, options: [])!
 
     }
-    var dayBefore:NSDate {
+    var dayBefore:Date {
         //let calendar =  NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-        let calendar =  NSCalendar.currentCalendar()
-        return calendar.dateByAddingUnit(NSCalendarUnit.Day, value: -1, toDate: self, options: [])!
+        let calendar =  Calendar.current
+        return (calendar as NSCalendar).date(byAdding: NSCalendar.Unit.day, value: -1, to: self, options: [])!
     }
 
-    func pasteboardDate() -> NSDate? {
+    func pasteboardDate() -> Date? {
 
-        guard let currentPasteboardContents = UIPasteboard.generalPasteboard().string else {
+        guard let currentPasteboardContents = UIPasteboard.general.string else {
             return nil
         }
 
-        let types: NSTextCheckingType = [.Date]
+        let types: NSTextCheckingResult.CheckingType = [.date]
         let detector = try? NSDataDetector(types: types.rawValue)
-        var dates: [NSDate] = []
+        var dates: [Date] = []
 
-        detector?.enumerateMatchesInString(currentPasteboardContents, options: [], range: NSMakeRange(0, currentPasteboardContents.characters.count)) { (result, flags, _) in
+        detector?.enumerateMatches(in: currentPasteboardContents, options: [], range: NSMakeRange(0, currentPasteboardContents.characters.count)) { (result, flags, _) in
 
             if let date = result?.date {
                 dates.append(date)
@@ -92,21 +92,21 @@ extension NSDate {
 
 }
 
-public extension NSLocale {
+public extension Locale {
     
     func dateOrder() -> DateOrder {
-        guard let formatter = NSDateFormatter.dateFormatFromTemplate("MMMMdY", options: 0, locale: self) else {
-            return .DayFirst
+        guard let formatter = DateFormatter.dateFormat(fromTemplate: "MMMMdY", options: 0, locale: self) else {
+            return .dayFirst
         }
         
         if formatter.hasPrefix("Y") {
-            return .YearFirst
+            return .yearFirst
         }
         
         if formatter.hasPrefix("M") {
-            return .MonthFirst
+            return .monthFirst
         }
         
-        return .DayFirst
+        return .dayFirst
     }
 }

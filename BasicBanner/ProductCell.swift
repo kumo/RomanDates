@@ -10,16 +10,16 @@ import UIKit
 import StoreKit
 
 class ProductCell: UITableViewCell {
-    static let priceFormatter: NSNumberFormatter = {
-        let formatter = NSNumberFormatter()
+    static let priceFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
         
-        formatter.formatterBehavior = .Behavior10_4
-        formatter.numberStyle = .CurrencyStyle
+        formatter.formatterBehavior = .behavior10_4
+        formatter.numberStyle = .currency
         
         return formatter
     }()
     
-    var buyButtonHandler: ((product: SKProduct) -> ())?
+    var buyButtonHandler: ((_ product: SKProduct) -> ())?
     
     var product: SKProduct? {
         didSet {
@@ -28,10 +28,10 @@ class ProductCell: UITableViewCell {
             textLabel?.text = product.localizedTitle
 
             if IAPHelper.canMakePayments() {
-                accessoryType = .None
+                accessoryType = .none
                 accessoryView = self.newBuyButton()
 
-                if let price = ProductCell.priceFormatter.stringFromNumber(product.price) {
+                if let price = ProductCell.priceFormatter.string(from: product.price) {
                     if RomanDatesProducts.store.isProductPurchased(product.productIdentifier) {
                         detailTextLabel?.text = price + " ✓"
                     } else {
@@ -55,16 +55,16 @@ class ProductCell: UITableViewCell {
     }
     
     func newBuyButton() -> UIButton {
-        let button = UIButton(type: .System)
-        button.setTitleColor(tintColor, forState: .Normal)
-        button.setTitle("Buy", forState: .Normal)
-        button.addTarget(self, action: #selector(ProductCell.buyButtonTapped(_:)), forControlEvents: .TouchUpInside)
+        let button = UIButton(type: .system)
+        button.setTitleColor(tintColor, for: UIControlState())
+        button.setTitle("Buy", for: UIControlState())
+        button.addTarget(self, action: #selector(ProductCell.buyButtonTapped(_:)), for: .touchUpInside)
         button.sizeToFit()
         
         return button
     }
     
-    func buyButtonTapped(sender: AnyObject) {
-        buyButtonHandler?(product: product!)
+    func buyButtonTapped(_ sender: AnyObject) {
+        buyButtonHandler?(product!)
     }
 }

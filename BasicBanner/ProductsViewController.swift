@@ -15,7 +15,7 @@ class ProductsViewController: UITableViewController {
     
     var products = [SKProduct]()
     
-    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == showDetailSegueIdentifier {
             guard let indexPath = tableView.indexPathForSelectedRow else {
                 return false
@@ -29,7 +29,7 @@ class ProductsViewController: UITableViewController {
         return true
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         /*if segue.identifier == showDetailSegueIdentifier {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             
@@ -49,17 +49,17 @@ class ProductsViewController: UITableViewController {
         title = "Roman Dates"
         
         refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: #selector(ProductsViewController.reload), forControlEvents: .ValueChanged)
+        refreshControl?.addTarget(self, action: #selector(ProductsViewController.reload), for: .valueChanged)
         
         /*let restoreButton = UIBarButtonItem(title: "Restore", style: .Plain, target: self, action: #selector(ProductsViewController.restoreTapped(_:)))
         navigationItem.rightBarButtonItem = restoreButton*/
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ProductsViewController.handlePurchaseNotification(_:)),
-                                                         name: IAPHelper.IAPHelperPurchaseNotification,
+        NotificationCenter.default.addObserver(self, selector: #selector(ProductsViewController.handlePurchaseNotification(_:)),
+                                                         name: NSNotification.Name(rawValue: IAPHelper.IAPHelperPurchaseNotification),
                                                          object: nil)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         reload()
@@ -81,17 +81,17 @@ class ProductsViewController: UITableViewController {
         }
     }
     
-    func restoreTapped(sender: AnyObject) {
+    func restoreTapped(_ sender: AnyObject) {
         RomanDatesProducts.store.restorePurchases()
     }
     
-    func handlePurchaseNotification(notification: NSNotification) {
+    func handlePurchaseNotification(_ notification: Notification) {
         guard let productID = notification.object as? String else { return }
         
-        for (index, product) in products.enumerate() {
+        for (index, product) in products.enumerated() {
             guard product.productIdentifier == productID else { continue }
             
-            tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: 0)], withRowAnimation: .Fade)
+            tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .fade)
         }
     }
 }
@@ -100,16 +100,16 @@ class ProductsViewController: UITableViewController {
 
 extension ProductsViewController {
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return products.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! ProductCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ProductCell
         
         let product = products[indexPath.row]
         
@@ -121,7 +121,7 @@ extension ProductsViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return "Thanks for the tip and for any suggestions or requests that you send!"
     }
 }

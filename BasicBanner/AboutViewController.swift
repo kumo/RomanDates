@@ -28,9 +28,9 @@ class AboutViewController: UITableViewController {
 
     // MARK: - Table view data source
     
-    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if (section == 2) {
-            if let version = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String {
+            if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
                 return "Version: " + version
             } else {
                 return nil
@@ -42,8 +42,8 @@ class AboutViewController: UITableViewController {
     
     // MARK: - Table view delegate
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
         if (indexPath.section == 0) {
             if (indexPath.row == 1) {
@@ -51,8 +51,8 @@ class AboutViewController: UITableViewController {
             }
         } else if (indexPath.section == 1) {
             if (indexPath.row == 0)  {
-                if let url = NSURL(string: "http://cadigatt.com/romandates/support/") {
-                    UIApplication.sharedApplication().openURL(url)
+                if let url = URL(string: "http://cadigatt.com/romandates/support/") {
+                    UIApplication.shared.openURL(url)
                 }
             } else if (indexPath.row == 1) {
                 self.openTwitter("cadigatt")
@@ -68,13 +68,13 @@ class AboutViewController: UITableViewController {
 
     // Mark: - Twitter
     
-    func openTwitter(account: String) {
-        if let twitterURL = NSURL(string: "twitter://user?screen_name=" + account) {
-            if UIApplication.sharedApplication().canOpenURL(twitterURL) {
-                UIApplication.sharedApplication().openURL(twitterURL)
+    func openTwitter(_ account: String) {
+        if let twitterURL = URL(string: "twitter://user?screen_name=" + account) {
+            if UIApplication.shared.canOpenURL(twitterURL) {
+                UIApplication.shared.openURL(twitterURL)
             } else {
-                if let url = NSURL(string: "http://twitter.com/" + account) {
-                    UIApplication.sharedApplication().openURL(url)
+                if let url = URL(string: "http://twitter.com/" + account) {
+                    UIApplication.shared.openURL(url)
                 }
             }
         }
@@ -89,7 +89,7 @@ extension AboutViewController: MFMailComposeViewControllerDelegate {
     func composeEmail() {
         if MFMailComposeViewController.canSendMail()
         {
-            if let version = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String {
+            if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
                 let label = "Roman Dates, v" + version
 
                 let mailer = MFMailComposeViewController()
@@ -100,19 +100,19 @@ extension AboutViewController: MFMailComposeViewControllerDelegate {
 
                 mailer.setMessageBody("\n\n" + label, isHTML: false)
 
-                self.presentViewController(mailer, animated: true, completion: nil)
+                self.present(mailer, animated: true, completion: nil)
             }
         }
         else
         {
-            if let url = NSURL(string: "mailto:support+romandates@cadigatt.com?subject=RomanDates") {
-                UIApplication.sharedApplication().openURL(url)
+            if let url = URL(string: "mailto:support+romandates@cadigatt.com?subject=RomanDates") {
+                UIApplication.shared.openURL(url)
             }
         }
     }
 
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        controller.dismissViewControllerAnimated(true, completion: nil)
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 
 }
