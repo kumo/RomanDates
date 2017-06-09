@@ -124,8 +124,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @available(iOS 8.0, *)
     func application(_ application: UIApplication,
                      continue userActivity: NSUserActivity,
-                                          restorationHandler: (@escaping ([AnyObject]?) -> Void))
-        -> Bool {
+                     restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
             //let userInfo = userActivity.userInfo
             //print("Received a payload via handoff: \(userInfo)")
             

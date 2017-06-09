@@ -54,7 +54,7 @@ open class AppConfiguration {
             Defaults.dateFormatKey: 0 as AnyObject,
             Defaults.usePasteboardKey: true as AnyObject,
             Defaults.pasteboardChangeCountKey: 0 as AnyObject, // not so sure about this logic
-            Defaults.separatorSymbolKey: 0
+            Defaults.separatorSymbolKey: 0 as AnyObject,
         ]
         
         defaults.register(defaults: defaultOptions)

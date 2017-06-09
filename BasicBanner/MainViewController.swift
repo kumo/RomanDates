@@ -99,8 +99,8 @@ class MainViewController: UIViewController {
 
             let activityViewController : UIActivityViewController = UIActivityViewController(activityItems: [textActivityItem, pngActivityItem], applicationActivities: nil)
             
-            activityViewController.completionWithItemsHandler = {(activityType, completed:Bool, returnedItems:[AnyObject]?, error: NSError?) in
-                
+            activityViewController.completionWithItemsHandler = {(activityType: UIActivityType?, completed: Bool, returnedItems:[Any]?, error: Error?) -> Void in
+
                 // Return if cancelled
                 if (!completed) {
                     return
@@ -129,7 +129,7 @@ class MainViewController: UIViewController {
                 case UIActivityType.postToTencentWeibo: activityName = "TencentWeibo"
                 case UIActivityType.airDrop: activityName = "AirDrop"
                 case UIActivityType.copyToPasteboard: activityName = "Pasteboard"
-                default: activityName = activity
+                default: activityName = activity.rawValue
                 }
                 
                 Answers.logShare(withMethod: activityName, contentName: nil, contentType: nil, contentId: nil, customAttributes: ["dateOrder": self.dateOrder.rawValue])
