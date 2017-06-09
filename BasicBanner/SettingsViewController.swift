@@ -34,7 +34,7 @@ class SettingsViewController: UITableViewController {
                     UIApplication.shared.openURL(url)
                 }
             }
-        } else if (indexPath.section == 3) {
+        } else if (indexPath.section == 2) {
             if (indexPath.row == 1) {
                 self.tellAFriend()
             } else if (indexPath.row == 2) {
