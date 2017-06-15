@@ -262,3 +262,31 @@ extension MainViewController {
     }
 
 }
+
+extension MainViewController {
+
+
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return ( action == #selector(copy(_:)) )
+    }
+
+    @IBAction func longPressDateLabel(_ sender: Any) {
+
+        let menu = UIMenuController.shared
+        if !menu.isMenuVisible {
+            menu.setTargetRect(dateLabel.bounds, in: dateLabel)
+            menu.setMenuVisible(true, animated: true)
+        }
+
+    }
+
+    override var canBecomeFirstResponder : Bool {
+        return true
+    }
+
+    // MARK: - UIResponderStandardEditActions
+
+    override func copy(_ sender: Any?) {
+        UIPasteboard.general.string = dateLabel.text
+    }
+}
