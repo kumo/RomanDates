@@ -44,6 +44,15 @@ class MainViewController: UIViewController {
         date = Date()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        // TODO: not sure if I want to keep this request here, especially when other things can happen
+        if #available(iOS 10.3, *) {
+            SKStoreReviewController.requestReview()
+        } else {
+            // Fallback on earlier versions
+        };
+    }
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
@@ -134,12 +143,6 @@ class MainViewController: UIViewController {
                 }
                 
                 Answers.logShare(withMethod: activityName, contentName: nil, contentType: nil, contentId: nil, customAttributes: ["dateOrder": self.dateOrder.rawValue])
-
-                if #available(iOS 10.3, *) {
-                    SKStoreReviewController.requestReview()
-                } else {
-                    // Fallback on earlier versions
-                };
             }
             
             if self.responds(to: #selector(getter: UIViewController.popoverPresentationController)) {
