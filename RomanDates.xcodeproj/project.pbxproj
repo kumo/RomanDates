@@ -19,19 +19,25 @@
 		631EA71D1402E7CF003FB021 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631EA71C1402E7CF003FB021 /* Foundation.framework */; };
 		631EA71F1402E7CF003FB021 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631EA71E1402E7CF003FB021 /* CoreGraphics.framework */; };
 		631EA7251402E7CF003FB021 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 631EA7231402E7CF003FB021 /* InfoPlist.strings */; };
-		631EA7271402E7CF003FB021 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 631EA7261402E7CF003FB021 /* main.m */; };
-		631EA72B1402E7CF003FB021 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 631EA72A1402E7CF003FB021 /* AppDelegate.m */; };
 		631EA76E1402E8A3003FB021 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631EA76D1402E8A3003FB021 /* iAd.framework */; };
-		631EA77F1402F8B1003FB021 /* RomanDatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631EA77D1402F8B1003FB021 /* RomanDatesViewController.m */; };
-		BF2EECCF19AB9E980016FB16 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EECCE19AB9E980016FB16 /* BannerViewController.m */; };
 		BF3C1F421BE28297003FD66F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C1F411BE28297003FD66F /* MainViewController.swift */; };
 		BF3C1F441BE28522003FD66F /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C1F431BE28522003FD66F /* Converter.swift */; };
+		BF6770401CF1A80F00A437AF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6770381CF1A80F00A437AF /* SettingsViewController.swift */; };
+		BF6770411CF1A80F00A437AF /* ConverterSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6770391CF1A80F00A437AF /* ConverterSettingsViewController.swift */; };
+		BF6770421CF1A80F00A437AF /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67703A1CF1A80F00A437AF /* AboutViewController.swift */; };
+		BF6770431CF1A80F00A437AF /* WhatsNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67703B1CF1A80F00A437AF /* WhatsNewViewController.swift */; };
+		BF6770441CF1A80F00A437AF /* RomanDatesProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67703C1CF1A80F00A437AF /* RomanDatesProducts.swift */; };
+		BF6770451CF1A80F00A437AF /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67703D1CF1A80F00A437AF /* ProductCell.swift */; };
+		BF6770461CF1A80F00A437AF /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67703E1CF1A80F00A437AF /* ProductsViewController.swift */; };
+		BF6770471CF1A80F00A437AF /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67703F1CF1A80F00A437AF /* IAPHelper.swift */; };
 		BF951C301CDEA0C400D3D0AE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF951C2E1CDEA0C400D3D0AE /* Fabric.framework */; };
 		BF951C311CDEA0C400D3D0AE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF951C2F1CDEA0C400D3D0AE /* Crashlytics.framework */; };
 		BF99018D19DD9A9900E049B0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF99018C19DD9A9900E049B0 /* LaunchScreen.xib */; };
-		BFA5BAC519AB3D6D00743CCF /* RomanNumsActivityItemProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA5BAC419AB3D6D00743CCF /* RomanNumsActivityItemProvider.m */; };
 		BFBF785919ABA938007AB1B0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBF785819ABA938007AB1B0 /* Images.xcassets */; };
-		BFFDADB819AB37490064112A /* Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFDADB719AB37490064112A /* Converter.m */; };
+		BFD358D91EEAFC13001E92CF /* MainStoryboard (IAP).storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD358D71EEAFC13001E92CF /* MainStoryboard (IAP).storyboard */; };
+		BFD358DB1EEAFD57001E92CF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD358DA1EEAFD57001E92CF /* StoreKit.framework */; };
+		BFE232921CF11E07000E7079 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE232911CF11E07000E7079 /* AppDelegate.swift */; };
+		BFE232941CF11E61000E7079 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE232931CF11E61000E7079 /* AppConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,26 +55,26 @@
 		631EA71E1402E7CF003FB021 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		631EA7221402E7CF003FB021 /* RomanDates-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RomanDates-Info.plist"; sourceTree = "<group>"; };
 		631EA7241402E7CF003FB021 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		631EA7261402E7CF003FB021 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		631EA7281402E7CF003FB021 /* RomanDates-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RomanDates-Prefix.pch"; sourceTree = "<group>"; };
-		631EA7291402E7CF003FB021 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		631EA72A1402E7CF003FB021 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		631EA76D1402E8A3003FB021 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		631EA77C1402F8B1003FB021 /* RomanDatesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RomanDatesViewController.h; sourceTree = "<group>"; };
-		631EA77D1402F8B1003FB021 /* RomanDatesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RomanDatesViewController.m; sourceTree = "<group>"; };
-		BF2EECCD19AB9E980016FB16 /* BannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
-		BF2EECCE19AB9E980016FB16 /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
 		BF3C1F401BE28297003FD66F /* RomanDates-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RomanDates-Bridging-Header.h"; sourceTree = "<group>"; };
 		BF3C1F411BE28297003FD66F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BF3C1F431BE28522003FD66F /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		BF6770381CF1A80F00A437AF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BF6770391CF1A80F00A437AF /* ConverterSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConverterSettingsViewController.swift; sourceTree = "<group>"; };
+		BF67703A1CF1A80F00A437AF /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		BF67703B1CF1A80F00A437AF /* WhatsNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhatsNewViewController.swift; sourceTree = "<group>"; };
+		BF67703C1CF1A80F00A437AF /* RomanDatesProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RomanDatesProducts.swift; sourceTree = "<group>"; };
+		BF67703D1CF1A80F00A437AF /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		BF67703E1CF1A80F00A437AF /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		BF67703F1CF1A80F00A437AF /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		BF951C2E1CDEA0C400D3D0AE /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		BF951C2F1CDEA0C400D3D0AE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		BF99018C19DD9A9900E049B0 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		BFA5BAC319AB3D6D00743CCF /* RomanNumsActivityItemProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RomanNumsActivityItemProvider.h; sourceTree = "<group>"; };
-		BFA5BAC419AB3D6D00743CCF /* RomanNumsActivityItemProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RomanNumsActivityItemProvider.m; sourceTree = "<group>"; };
 		BFBF785819ABA938007AB1B0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RomanDates/Images.xcassets; sourceTree = SOURCE_ROOT; };
-		BFFDADB619AB37490064112A /* Converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Converter.h; sourceTree = "<group>"; };
-		BFFDADB719AB37490064112A /* Converter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Converter.m; sourceTree = "<group>"; };
+		BFD358D81EEAFC13001E92CF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = "BasicBanner/en.lproj/MainStoryboard (IAP).storyboard"; sourceTree = "<group>"; };
+		BFD358DA1EEAFD57001E92CF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		BFE232911CF11E07000E7079 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = RomanDates/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		BFE232931CF11E61000E7079 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppConfiguration.swift; path = RomanDates/AppConfiguration.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFD358DB1EEAFD57001E92CF /* StoreKit.framework in Frameworks */,
 				631EA76E1402E8A3003FB021 /* iAd.framework in Frameworks */,
 				BF951C301CDEA0C400D3D0AE /* Fabric.framework in Frameworks */,
 				631EA71B1402E7CF003FB021 /* UIKit.framework in Frameworks */,
@@ -110,6 +117,7 @@
 		631EA7191402E7CF003FB021 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFD358DA1EEAFD57001E92CF /* StoreKit.framework */,
 				631EA76D1402E8A3003FB021 /* iAd.framework */,
 				631EA71A1402E7CF003FB021 /* UIKit.framework */,
 				631EA71C1402E7CF003FB021 /* Foundation.framework */,
@@ -121,21 +129,21 @@
 		631EA7201402E7CF003FB021 /* RomanDates */ = {
 			isa = PBXGroup;
 			children = (
-				631EA7291402E7CF003FB021 /* AppDelegate.h */,
-				631EA72A1402E7CF003FB021 /* AppDelegate.m */,
-				631EA77C1402F8B1003FB021 /* RomanDatesViewController.h */,
-				631EA77D1402F8B1003FB021 /* RomanDatesViewController.m */,
+				BFE232911CF11E07000E7079 /* AppDelegate.swift */,
+				BFE232931CF11E61000E7079 /* AppConfiguration.swift */,
+				BF3C1F431BE28522003FD66F /* Converter.swift */,
 				BF3C1F411BE28297003FD66F /* MainViewController.swift */,
-				BF2EECCD19AB9E980016FB16 /* BannerViewController.h */,
-				BF2EECCE19AB9E980016FB16 /* BannerViewController.m */,
-				BFFDADB619AB37490064112A /* Converter.h */,
-				BFFDADB719AB37490064112A /* Converter.m */,
-				BFA5BAC319AB3D6D00743CCF /* RomanNumsActivityItemProvider.h */,
-				BFA5BAC419AB3D6D00743CCF /* RomanNumsActivityItemProvider.m */,
+				BF67703A1CF1A80F00A437AF /* AboutViewController.swift */,
+				BF6770381CF1A80F00A437AF /* SettingsViewController.swift */,
+				BF6770391CF1A80F00A437AF /* ConverterSettingsViewController.swift */,
+				BF67703B1CF1A80F00A437AF /* WhatsNewViewController.swift */,
+				BF67703C1CF1A80F00A437AF /* RomanDatesProducts.swift */,
+				BF67703D1CF1A80F00A437AF /* ProductCell.swift */,
+				BF67703E1CF1A80F00A437AF /* ProductsViewController.swift */,
+				BF67703F1CF1A80F00A437AF /* IAPHelper.swift */,
 				BFBF785819ABA938007AB1B0 /* Images.xcassets */,
 				631EA7211402E7CF003FB021 /* Supporting Files */,
 				BF3C1F401BE28297003FD66F /* RomanDates-Bridging-Header.h */,
-				BF3C1F431BE28522003FD66F /* Converter.swift */,
 			);
 			name = RomanDates;
 			path = BasicBanner;
@@ -147,9 +155,8 @@
 				BF99018C19DD9A9900E049B0 /* LaunchScreen.xib */,
 				631EA7221402E7CF003FB021 /* RomanDates-Info.plist */,
 				631EA7231402E7CF003FB021 /* InfoPlist.strings */,
-				631EA7261402E7CF003FB021 /* main.m */,
-				631EA7281402E7CF003FB021 /* RomanDates-Prefix.pch */,
 				53202C5117286BF500BB02BD /* MainStoryboard.storyboard */,
+				BFD358D71EEAFC13001E92CF /* MainStoryboard (IAP).storyboard */,
 				533396151745525C0024FF41 /* Default.png */,
 				533396161745525C0024FF41 /* Default@2x.png */,
 				533396101745525C0024FF41 /* Default-568h@2x.png */,
@@ -188,10 +195,11 @@
 		631EA70D1402E7CF003FB021 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0830;
 				TargetAttributes = {
 					631EA7151402E7CF003FB021 = {
 						DevelopmentTeam = 6E8JQ66NR8;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -224,6 +232,7 @@
 				533396181745525C0024FF41 /* Default-Landscape.png in Resources */,
 				533396191745525C0024FF41 /* Default-Landscape@2x.png in Resources */,
 				5333961A1745525C0024FF41 /* Default-Portrait.png in Resources */,
+				BFD358D91EEAFC13001E92CF /* MainStoryboard (IAP).storyboard in Resources */,
 				5333961B1745525C0024FF41 /* Default-Portrait@2x.png in Resources */,
 				5333961C1745525C0024FF41 /* Default.png in Resources */,
 				BF99018D19DD9A9900E049B0 /* LaunchScreen.xib in Resources */,
@@ -255,13 +264,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF3C1F421BE28297003FD66F /* MainViewController.swift in Sources */,
-				631EA7271402E7CF003FB021 /* main.m in Sources */,
+				BF6770441CF1A80F00A437AF /* RomanDatesProducts.swift in Sources */,
 				BF3C1F441BE28522003FD66F /* Converter.swift in Sources */,
-				BFA5BAC519AB3D6D00743CCF /* RomanNumsActivityItemProvider.m in Sources */,
-				BF2EECCF19AB9E980016FB16 /* BannerViewController.m in Sources */,
-				631EA72B1402E7CF003FB021 /* AppDelegate.m in Sources */,
-				BFFDADB819AB37490064112A /* Converter.m in Sources */,
-				631EA77F1402F8B1003FB021 /* RomanDatesViewController.m in Sources */,
+				BFE232941CF11E61000E7079 /* AppConfiguration.swift in Sources */,
+				BF6770471CF1A80F00A437AF /* IAPHelper.swift in Sources */,
+				BF6770461CF1A80F00A437AF /* ProductsViewController.swift in Sources */,
+				BF6770421CF1A80F00A437AF /* AboutViewController.swift in Sources */,
+				BF6770401CF1A80F00A437AF /* SettingsViewController.swift in Sources */,
+				BF6770411CF1A80F00A437AF /* ConverterSettingsViewController.swift in Sources */,
+				BF6770451CF1A80F00A437AF /* ProductCell.swift in Sources */,
+				BFE232921CF11E07000E7079 /* AppDelegate.swift in Sources */,
+				BF6770431CF1A80F00A437AF /* WhatsNewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +298,15 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
+		BFD358D71EEAFC13001E92CF /* MainStoryboard (IAP).storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFD358D81EEAFC13001E92CF /* en */,
+			);
+			name = "MainStoryboard (IAP).storyboard";
+			path = ..;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -297,7 +319,9 @@
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -326,7 +350,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
@@ -343,7 +367,9 @@
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -364,7 +390,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
@@ -393,7 +419,8 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BasicBanner/RomanDates-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 1;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -417,8 +444,9 @@
 				PRODUCT_NAME = RomanDates;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BasicBanner/RomanDates-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 1;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
