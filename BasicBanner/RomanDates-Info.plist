@@ -39,7 +39,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
+	<string>This app would like to save photos to your Photo Library.</string>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
