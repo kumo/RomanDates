@@ -137,10 +137,7 @@
 				BF6770381CF1A80F00A437AF /* SettingsViewController.swift */,
 				BF6770391CF1A80F00A437AF /* ConverterSettingsViewController.swift */,
 				BF67703B1CF1A80F00A437AF /* WhatsNewViewController.swift */,
-				BF67703C1CF1A80F00A437AF /* RomanDatesProducts.swift */,
-				BF67703D1CF1A80F00A437AF /* ProductCell.swift */,
-				BF67703E1CF1A80F00A437AF /* ProductsViewController.swift */,
-				BF67703F1CF1A80F00A437AF /* IAPHelper.swift */,
+				BFD86C141EF3268600B8FB0A /* IAPs */,
 				BFBF785819ABA938007AB1B0 /* Images.xcassets */,
 				631EA7211402E7CF003FB021 /* Supporting Files */,
 				BF3C1F401BE28297003FD66F /* RomanDates-Bridging-Header.h */,
@@ -166,6 +163,17 @@
 				533396141745525C0024FF41 /* Default-Portrait@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BFD86C141EF3268600B8FB0A /* IAPs */ = {
+			isa = PBXGroup;
+			children = (
+				BF67703C1CF1A80F00A437AF /* RomanDatesProducts.swift */,
+				BF67703D1CF1A80F00A437AF /* ProductCell.swift */,
+				BF67703E1CF1A80F00A437AF /* ProductsViewController.swift */,
+				BF67703F1CF1A80F00A437AF /* IAPHelper.swift */,
+			);
+			name = IAPs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
