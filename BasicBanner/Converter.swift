@@ -76,7 +76,7 @@ extension Date {
         let detector = try? NSDataDetector(types: types.rawValue)
         var dates: [Date] = []
 
-        detector?.enumerateMatches(in: currentPasteboardContents, options: [], range: NSMakeRange(0, currentPasteboardContents.characters.count)) { (result, flags, _) in
+        detector?.enumerateMatches(in: currentPasteboardContents, options: [], range: NSMakeRange(0, currentPasteboardContents.count)) { (result, flags, _) in
 
             if let date = result?.date {
                 dates.append(date)

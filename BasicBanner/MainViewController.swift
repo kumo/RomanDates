@@ -203,8 +203,8 @@ class MainViewController: UIViewController {
         dateLabel.text = text
 
         if let accessibilityText = dateLabel.text?.replacingOccurrences(of: "\u{200B}\(separatorSymbol)\u{200B}", with: " - ") {
-            dateLabel.accessibilityLabel = accessibilityText.characters.reduce("",
-                                                                               {String($0) + String($1) + ". "})
+            dateLabel.accessibilityLabel = accessibilityText.reduce("",
+                                                                    {String($0) + String($1) + ". "})
 
             UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, dateLabel.accessibilityLabel)
         }
@@ -219,7 +219,7 @@ extension MainViewController {
         let detector = try? NSDataDetector(types: types.rawValue)
         var dates: [Date] = []
 
-        detector?.enumerateMatches(in: string, options: [], range: NSMakeRange(0, string.characters.count)) { (result, flags, _) in
+        detector?.enumerateMatches(in: string, options: [], range: NSMakeRange(0, string.count)) { (result, flags, _) in
 
             if let date = result?.date {
                 dates.append(date)
