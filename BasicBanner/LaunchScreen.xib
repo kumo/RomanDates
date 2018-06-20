@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,14 +16,14 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright (c) 2017 Robert Clarke. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="DYN-ud-Bh8">
-                    <rect key="frame" x="8" y="618" width="359" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright (c) 2018 Robert Clarke. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="DYN-ud-Bh8">
+                    <rect key="frame" x="16" y="618" width="343" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roman Dates" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="0Uk-Hn-JuQ">
-                    <rect key="frame" x="74" y="312" width="227" height="43"/>
+                    <rect key="frame" x="76.5" y="312" width="222.5" height="43"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -34,7 +34,6 @@
                 <constraint firstAttribute="trailingMargin" secondItem="DYN-ud-Bh8" secondAttribute="trailing" id="Hgd-sm-0Kf"/>
                 <constraint firstAttribute="centerY" secondItem="0Uk-Hn-JuQ" secondAttribute="centerY" id="NAI-mM-cIl"/>
                 <constraint firstAttribute="centerX" secondItem="0Uk-Hn-JuQ" secondAttribute="centerX" id="UAE-Ti-uCW"/>
-                <constraint firstAttribute="bottomMargin" secondItem="DYN-ud-Bh8" secondAttribute="bottom" constant="20" id="fxk-SV-Bfd"/>
                 <constraint firstAttribute="bottom" secondItem="DYN-ud-Bh8" secondAttribute="bottom" constant="28" id="ogB-3O-14J"/>
                 <constraint firstItem="DYN-ud-Bh8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="sbc-RB-Clp"/>
                 <constraint firstAttribute="centerX" secondItem="DYN-ud-Bh8" secondAttribute="centerX" id="uJq-xv-mrn"/>
