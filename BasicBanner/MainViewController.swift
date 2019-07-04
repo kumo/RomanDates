@@ -105,11 +105,11 @@ class MainViewController: UIViewController {
             
             UIGraphicsEndImageContext()
             
-            let pngActivityItem = UIImagePNGRepresentation(screenshot!)!
+            let pngActivityItem = screenshot!.pngData()!
 
             let activityViewController : UIActivityViewController = UIActivityViewController(activityItems: [textActivityItem, pngActivityItem], applicationActivities: nil)
             
-            activityViewController.completionWithItemsHandler = {(activityType: UIActivityType?, completed: Bool, returnedItems:[Any]?, error: Error?) -> Void in
+            activityViewController.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems:[Any]?, error: Error?) -> Void in
 
                 // Return if cancelled
                 if (!completed) {
@@ -127,18 +127,18 @@ class MainViewController: UIViewController {
                 }
                 
                 switch activity {
-                case UIActivityType.postToTwitter: activityName = "Twitter"
-                case UIActivityType.postToFacebook: activityName = "Facebook"
-                case UIActivityType.mail: activityName = "Email"
-                case UIActivityType.message: activityName = "Message"
-                case UIActivityType.print: activityName = "Print"
-                case UIActivityType.saveToCameraRoll: activityName = "CameraRoll"
-                case UIActivityType.postToFlickr: activityName = "Flickr"
-                case UIActivityType.assignToContact: activityName = "Contact"
-                case UIActivityType.postToWeibo: activityName = "Weibo"
-                case UIActivityType.postToTencentWeibo: activityName = "TencentWeibo"
-                case UIActivityType.airDrop: activityName = "AirDrop"
-                case UIActivityType.copyToPasteboard: activityName = "Pasteboard"
+                case UIActivity.ActivityType.postToTwitter: activityName = "Twitter"
+                case UIActivity.ActivityType.postToFacebook: activityName = "Facebook"
+                case UIActivity.ActivityType.mail: activityName = "Email"
+                case UIActivity.ActivityType.message: activityName = "Message"
+                case UIActivity.ActivityType.print: activityName = "Print"
+                case UIActivity.ActivityType.saveToCameraRoll: activityName = "CameraRoll"
+                case UIActivity.ActivityType.postToFlickr: activityName = "Flickr"
+                case UIActivity.ActivityType.assignToContact: activityName = "Contact"
+                case UIActivity.ActivityType.postToWeibo: activityName = "Weibo"
+                case UIActivity.ActivityType.postToTencentWeibo: activityName = "TencentWeibo"
+                case UIActivity.ActivityType.airDrop: activityName = "AirDrop"
+                case UIActivity.ActivityType.copyToPasteboard: activityName = "Pasteboard"
                 default: activityName = activity.rawValue
                 }
                 
@@ -206,7 +206,7 @@ class MainViewController: UIViewController {
             dateLabel.accessibilityLabel = accessibilityText.reduce("",
                                                                     {String($0) + String($1) + ". "})
 
-            UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, dateLabel.accessibilityLabel)
+            UIAccessibility.post(notification: UIAccessibility.Notification.announcement, argument: dateLabel.accessibilityLabel)
         }
     }
 }

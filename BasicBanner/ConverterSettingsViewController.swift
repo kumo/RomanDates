@@ -49,7 +49,7 @@ class ConverterSettingsViewController: UITableViewController {
         if let cell = self.automaticallyCopyFromPasteboardCell {
             let switchView = UISwitch(frame: CGRect.zero)
             switchView.setOn(AppConfiguration.sharedConfiguration.usePasteboard, animated: false)
-            switchView.addTarget(self, action: #selector(automaticallyCopyFromPasteboardSwitchChanged), for: UIControlEvents.valueChanged)
+            switchView.addTarget(self, action: #selector(automaticallyCopyFromPasteboardSwitchChanged), for: UIControl.Event.valueChanged)
 
             cell.accessoryView = switchView
         }
@@ -57,14 +57,14 @@ class ConverterSettingsViewController: UITableViewController {
         if let cell = self.useCurrentLocaleForDateCell {
             let switchView = UISwitch(frame: CGRect.zero)
             switchView.setOn(AppConfiguration.sharedConfiguration.automaticDateFormat, animated: false)
-            switchView.addTarget(self, action: #selector(useCurrentLocaleForDateSwitchChanged), for: UIControlEvents.valueChanged)
+            switchView.addTarget(self, action: #selector(useCurrentLocaleForDateSwitchChanged), for: UIControl.Event.valueChanged)
 
             cell.accessoryView = switchView
         }
 
         if let cell = self.dateOrderCell,
            let segment = self.dateOrderSegment {
-            segment.addTarget(self, action: #selector(dateOrderSegmentChanged), for: UIControlEvents.valueChanged)
+            segment.addTarget(self, action: #selector(dateOrderSegmentChanged), for: UIControl.Event.valueChanged)
 
 
             if AppConfiguration.sharedConfiguration.automaticDateFormat {
@@ -79,7 +79,7 @@ class ConverterSettingsViewController: UITableViewController {
         if let cell = self.showYearCell {
             let switchView = UISwitch(frame: CGRect.zero)
             switchView.setOn(AppConfiguration.sharedConfiguration.showYear, animated: false)
-            switchView.addTarget(self, action: #selector(showYearSwitchChanged), for: UIControlEvents.valueChanged)
+            switchView.addTarget(self, action: #selector(showYearSwitchChanged), for: UIControl.Event.valueChanged)
             
             cell.accessoryView = switchView
         }
@@ -87,7 +87,7 @@ class ConverterSettingsViewController: UITableViewController {
         if let cell = self.showYearInFullCell {
             let switchView = UISwitch(frame: CGRect.zero)
             switchView.setOn(AppConfiguration.sharedConfiguration.showFullYear, animated: false)
-            switchView.addTarget(self, action: #selector(showYearInFullSwitchChanged), for: UIControlEvents.valueChanged)
+            switchView.addTarget(self, action: #selector(showYearInFullSwitchChanged), for: UIControl.Event.valueChanged)
 
             cell.accessoryView = switchView
 
@@ -95,7 +95,7 @@ class ConverterSettingsViewController: UITableViewController {
         }
 
         if let segment = self.symbolSegment {
-            segment.addTarget(self, action: #selector(symbolSegmentChanged), for: UIControlEvents.valueChanged)
+            segment.addTarget(self, action: #selector(symbolSegmentChanged), for: UIControl.Event.valueChanged)
 
             symbolSegment.selectedSegmentIndex = AppConfiguration.sharedConfiguration.separatorSymbol.rawValue
         }
