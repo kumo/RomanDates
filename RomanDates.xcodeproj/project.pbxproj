@@ -41,7 +41,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		53202C5217286BF500BB02BD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = BasicBanner/en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		533396101745525C0024FF41 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "images/Default-568h@2x.png"; sourceTree = "<group>"; };
 		533396111745525C0024FF41 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape.png"; path = "images/Default-Landscape.png"; sourceTree = "<group>"; };
 		533396121745525C0024FF41 /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape@2x.png"; path = "images/Default-Landscape@2x.png"; sourceTree = "<group>"; };
@@ -56,6 +55,8 @@
 		631EA7221402E7CF003FB021 /* RomanDates-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RomanDates-Info.plist"; sourceTree = "<group>"; };
 		631EA7241402E7CF003FB021 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		631EA76D1402E8A3003FB021 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		BF39467E22CE93B600251B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = BasicBanner/Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		BF39467F22CE93B600251B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "BasicBanner/Base.lproj/MainStoryboard (IAP).storyboard"; sourceTree = "<group>"; };
 		BF3C1F401BE28297003FD66F /* RomanDates-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RomanDates-Bridging-Header.h"; sourceTree = "<group>"; };
 		BF3C1F411BE28297003FD66F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BF3C1F431BE28522003FD66F /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
@@ -71,7 +72,6 @@
 		BF951C2F1CDEA0C400D3D0AE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		BF99018C19DD9A9900E049B0 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		BFBF785819ABA938007AB1B0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RomanDates/Images.xcassets; sourceTree = SOURCE_ROOT; };
-		BFD358D81EEAFC13001E92CF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = "BasicBanner/en.lproj/MainStoryboard (IAP).storyboard"; sourceTree = "<group>"; };
 		BFD358DA1EEAFD57001E92CF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BFE232911CF11E07000E7079 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = RomanDates/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		BFE232931CF11E61000E7079 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppConfiguration.swift; path = RomanDates/AppConfiguration.swift; sourceTree = SOURCE_ROOT; };
@@ -203,7 +203,7 @@
 		631EA70D1402E7CF003FB021 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1020;
 				TargetAttributes = {
 					631EA7151402E7CF003FB021 = {
 						DevelopmentTeam = 6E8JQ66NR8;
@@ -213,11 +213,11 @@
 			};
 			buildConfigurationList = 631EA7101402E7CF003FB021 /* Build configuration list for PBXProject "RomanDates" */;
 			compatibilityVersion = "Xcode 8.0";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
 			mainGroup = 631EA70B1402E7CF003FB021;
 			productRefGroup = 631EA7171402E7CF003FB021 /* Products */;
@@ -293,7 +293,7 @@
 		53202C5117286BF500BB02BD /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				53202C5217286BF500BB02BD /* en */,
+				BF39467E22CE93B600251B2F /* Base */,
 			);
 			name = MainStoryboard.storyboard;
 			path = ..;
@@ -310,7 +310,7 @@
 		BFD358D71EEAFC13001E92CF /* MainStoryboard (IAP).storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BFD358D81EEAFC13001E92CF /* en */,
+				BF39467F22CE93B600251B2F /* Base */,
 			);
 			name = "MainStoryboard (IAP).storyboard";
 			path = ..;
@@ -323,6 +323,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -379,6 +380,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
