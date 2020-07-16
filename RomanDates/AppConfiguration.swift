@@ -43,7 +43,7 @@ open class AppConfiguration {
         return Singleton.sharedAppConfiguration
     }
     
-    open func runHandlerOnFirstLaunch(_ firstLaunchHandler: (Void) -> Void) {
+    open func runHandlerOnFirstLaunch(_ firstLaunchHandler: () -> Void) {
         let defaults = UserDefaults.standard
         
         let defaultOptions: [String: AnyObject] = [

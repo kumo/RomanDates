@@ -111,11 +111,11 @@ class ConverterSettingsViewController: UITableViewController {
 // MARK: - Switch events
 extension ConverterSettingsViewController {
 
-    func automaticallyCopyFromPasteboardSwitchChanged(_ sender: UISwitch!) {
+    @objc func automaticallyCopyFromPasteboardSwitchChanged(_ sender: UISwitch!) {
         AppConfiguration.sharedConfiguration.usePasteboard = sender.isOn
     }
 
-    func useCurrentLocaleForDateSwitchChanged(_ sender: UISwitch!) {
+    @objc func useCurrentLocaleForDateSwitchChanged(_ sender: UISwitch!) {
         AppConfiguration.sharedConfiguration.automaticDateFormat = sender.isOn
 
         self.dateOrderCell.appearEnabled(!sender.isOn)
@@ -128,13 +128,13 @@ extension ConverterSettingsViewController {
         }
     }
 
-    func showYearSwitchChanged(_ sender: UISwitch!) {
+    @objc func showYearSwitchChanged(_ sender: UISwitch!) {
         AppConfiguration.sharedConfiguration.showYear = sender.isOn
 
         self.showYearInFullCell.appearEnabled(sender.isOn)
     }
 
-    func showYearInFullSwitchChanged(_ sender: UISwitch!) {
+    @objc func showYearInFullSwitchChanged(_ sender: UISwitch!) {
         AppConfiguration.sharedConfiguration.showFullYear = sender.isOn
     }
 
@@ -143,11 +143,11 @@ extension ConverterSettingsViewController {
 // MARK: - Segment events
 extension ConverterSettingsViewController {
 
-    func dateOrderSegmentChanged(_ sender: UISegmentedControl!) {
+    @objc func dateOrderSegmentChanged(_ sender: UISegmentedControl!) {
         AppConfiguration.sharedConfiguration.dateFormat = DateOrder(rawValue: sender.selectedSegmentIndex)!
     }
 
-    func symbolSegmentChanged(_ sender: UISegmentedControl!) {
+    @objc func symbolSegmentChanged(_ sender: UISegmentedControl!) {
         AppConfiguration.sharedConfiguration.separatorSymbol = SeparatorSymbol(rawValue: sender.selectedSegmentIndex)!
     }
 
