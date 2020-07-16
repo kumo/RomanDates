@@ -30,8 +30,6 @@
 		BF6770451CF1A80F00A437AF /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67703D1CF1A80F00A437AF /* ProductCell.swift */; };
 		BF6770461CF1A80F00A437AF /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67703E1CF1A80F00A437AF /* ProductsViewController.swift */; };
 		BF6770471CF1A80F00A437AF /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67703F1CF1A80F00A437AF /* IAPHelper.swift */; };
-		BF951C301CDEA0C400D3D0AE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF951C2E1CDEA0C400D3D0AE /* Fabric.framework */; };
-		BF951C311CDEA0C400D3D0AE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF951C2F1CDEA0C400D3D0AE /* Crashlytics.framework */; };
 		BF99018D19DD9A9900E049B0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF99018C19DD9A9900E049B0 /* LaunchScreen.xib */; };
 		BFBF785919ABA938007AB1B0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBF785819ABA938007AB1B0 /* Images.xcassets */; };
 		BFD358D91EEAFC13001E92CF /* MainStoryboard (IAP).storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD358D71EEAFC13001E92CF /* MainStoryboard (IAP).storyboard */; };
@@ -67,8 +65,6 @@
 		BF67703D1CF1A80F00A437AF /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		BF67703E1CF1A80F00A437AF /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		BF67703F1CF1A80F00A437AF /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
-		BF951C2E1CDEA0C400D3D0AE /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		BF951C2F1CDEA0C400D3D0AE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		BF99018C19DD9A9900E049B0 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		BFBF785819ABA938007AB1B0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RomanDates/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		BFD358D81EEAFC13001E92CF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = "BasicBanner/en.lproj/MainStoryboard (IAP).storyboard"; sourceTree = "<group>"; };
@@ -84,10 +80,8 @@
 			files = (
 				BFD358DB1EEAFD57001E92CF /* StoreKit.framework in Frameworks */,
 				631EA76E1402E8A3003FB021 /* iAd.framework in Frameworks */,
-				BF951C301CDEA0C400D3D0AE /* Fabric.framework in Frameworks */,
 				631EA71B1402E7CF003FB021 /* UIKit.framework in Frameworks */,
 				631EA71D1402E7CF003FB021 /* Foundation.framework in Frameworks */,
-				BF951C311CDEA0C400D3D0AE /* Crashlytics.framework in Frameworks */,
 				631EA71F1402E7CF003FB021 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,8 +95,6 @@
 				631EA7201402E7CF003FB021 /* RomanDates */,
 				631EA7191402E7CF003FB021 /* Frameworks */,
 				631EA7171402E7CF003FB021 /* Products */,
-				BF951C2E1CDEA0C400D3D0AE /* Fabric.framework */,
-				BF951C2F1CDEA0C400D3D0AE /* Crashlytics.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,7 +178,6 @@
 				631EA7121402E7CF003FB021 /* Sources */,
 				631EA7131402E7CF003FB021 /* Frameworks */,
 				631EA7141402E7CF003FB021 /* Resources */,
-				BF951C2D1CDEA0A000D3D0AE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -250,22 +241,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		BF951C2D1CDEA0A000D3D0AE /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 7c0bffcaffb7d0dd11684758abb6e61d2e2266f7 b2be05cfa930714c4428aa0e05d3009b88face24726e56a05a0e07ead4d6c242";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		631EA7121402E7CF003FB021 /* Sources */ = {

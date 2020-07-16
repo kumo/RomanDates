@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Crashlytics
 import StoreKit
 
 class MainViewController: UIViewController {
@@ -119,30 +118,6 @@ class MainViewController: UIViewController {
                 //activity complete
                 //some code here
                 //print("Activity: \(activityType) Success: \(completed) Items: \(returnedItems) Error: \(error)")
-                
-                var activityName = ""
-                
-                guard let activity = activityType else {
-                    return
-                }
-                
-                switch activity {
-                case UIActivity.ActivityType.postToTwitter: activityName = "Twitter"
-                case UIActivity.ActivityType.postToFacebook: activityName = "Facebook"
-                case UIActivity.ActivityType.mail: activityName = "Email"
-                case UIActivity.ActivityType.message: activityName = "Message"
-                case UIActivity.ActivityType.print: activityName = "Print"
-                case UIActivity.ActivityType.saveToCameraRoll: activityName = "CameraRoll"
-                case UIActivity.ActivityType.postToFlickr: activityName = "Flickr"
-                case UIActivity.ActivityType.assignToContact: activityName = "Contact"
-                case UIActivity.ActivityType.postToWeibo: activityName = "Weibo"
-                case UIActivity.ActivityType.postToTencentWeibo: activityName = "TencentWeibo"
-                case UIActivity.ActivityType.airDrop: activityName = "AirDrop"
-                case UIActivity.ActivityType.copyToPasteboard: activityName = "Pasteboard"
-                default: activityName = activity.rawValue
-                }
-                
-                Answers.logShare(withMethod: activityName, contentName: nil, contentType: nil, contentId: nil, customAttributes: ["dateOrder": self.dateOrder.rawValue])
             }
             
             if self.responds(to: #selector(getter: UIViewController.popoverPresentationController)) {

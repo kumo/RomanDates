@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Fabric
-import Crashlytics
 
 enum ShortcutItemType: String {
     case ConvertToday
@@ -35,8 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        Fabric.with([Crashlytics.self])
-        
         AppConfiguration.sharedConfiguration.runHandlerOnFirstLaunch {
             // do nothing
         }
