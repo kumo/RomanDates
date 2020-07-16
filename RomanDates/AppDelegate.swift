@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         Fabric.with([Crashlytics.self])
         
@@ -112,7 +112,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }*/
         
         if let window = self.window, let rvc = window.rootViewController,
-            let mvc = rvc.childViewControllers.first as? MainViewController {
+            let mvc = rvc.children.first as? MainViewController {
             // TODO: restore the date
             //mvc.restoreDate(text)
             mvc.handleShortcut(shortcutItem)
@@ -124,12 +124,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @available(iOS 8.0, *)
     func application(_ application: UIApplication,
                      continue userActivity: NSUserActivity,
-                     restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+                     restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
             //let userInfo = userActivity.userInfo
             //print("Received a payload via handoff: \(userInfo)")
             
             if let window = self.window, let rvc = window.rootViewController {
-                rvc.childViewControllers.first?.restoreUserActivityState(userActivity)
+                rvc.children.first?.restoreUserActivityState(userActivity)
             }
             
             return true
