@@ -52,7 +52,7 @@ class AboutViewController: UITableViewController {
         } else if (indexPath.section == 1) {
             if (indexPath.row == 0)  {
                 if let url = URL(string: "http://cadigatt.com/romandates/support/") {
-                    UIApplication.shared.openURL(url)
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
             } else if (indexPath.row == 1) {
                 self.openTwitter("cadigatt")
@@ -71,10 +71,10 @@ class AboutViewController: UITableViewController {
     func openTwitter(_ account: String) {
         if let twitterURL = URL(string: "twitter://user?screen_name=" + account) {
             if UIApplication.shared.canOpenURL(twitterURL) {
-                UIApplication.shared.openURL(twitterURL)
+                UIApplication.shared.open(twitterURL, options: [:], completionHandler: nil)
             } else {
                 if let url = URL(string: "http://twitter.com/" + account) {
-                    UIApplication.shared.openURL(url)
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
             }
         }
@@ -106,7 +106,7 @@ extension AboutViewController: MFMailComposeViewControllerDelegate {
         else
         {
             if let url = URL(string: "mailto:support+romandates@cadigatt.com?subject=RomanDates") {
-                UIApplication.shared.openURL(url)
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         }
     }

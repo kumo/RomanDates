@@ -31,7 +31,7 @@ class SettingsViewController: UITableViewController {
         if (indexPath.section == 1) {
             if (indexPath.row == 0) {
                 if let url = URL(string: "http://cadigatt.com/romandates/support/") {
-                    UIApplication.shared.openURL(url)
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
             }
         } else if (indexPath.section == 2) {
@@ -61,7 +61,7 @@ class SettingsViewController: UITableViewController {
 
     func openReview() {
         if let reviewURL = URL(string: "itms-apps://itunes.apple.com/app/id912520382?action=write-review") {
-            UIApplication.shared.openURL(reviewURL)
+            UIApplication.shared.open(reviewURL, options: [:], completionHandler: nil)
         }
     }
 
