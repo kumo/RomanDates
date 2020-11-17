@@ -1,0 +1,28 @@
+Inbox:
+	- Info button could explain what is on the screen
+	- Ensure that minimum version of iOS is suitable
+RomanDates:
+	New Features:
+	Ideas:
+		- Rewrite in SwiftUI
+		- Make a widget that is a colourful Roman Dates just like the thing I made for Instagram
+		- Roman dates could appear mixed like California face
+		- create an app for the Apple Watch
+		- add support for new date picker
+		- explain how the date is calculated
+		- live preview of settings
+		- drag and drop calendar events
+		- show people with birthdays and anniversaries
+		- favourite current date
+		- customise colours and fonts
+		- save current date as image
+		- link to main Roman Nums app for extra information
+	Bugs:
+		- Remove darkmode since the UI doesn't work properly @done(2020-11-17)
+Archive:
+Search Definitions:
+	Top Priority @search(@priority = 5 and not @done)
+	High Priority @search(@priority > 3 and not @done)
+	Maybe @search(@maybe)
+	Next @search(@na and not @done and not project = "Archive")
+
