@@ -1,6 +1,8 @@
 Inbox:
 	- Info button could explain what is on the screen
 	- Ensure that minimum version of iOS is suitable
+	- Update app and then don't produce anything else, and only work on Roman Nums?
+	- Rewrite configuration code to support more-modern modal views
 RomanDates:
 	New Features:
 	Ideas:
@@ -19,6 +21,8 @@ RomanDates:
 		- link to main Roman Nums app for extra information
 	Bugs:
 		- Remove darkmode since the UI doesn't work properly @done(2020-11-17)
+		- Configuration changes no longer affect the converter view @done(2020-11-17)
+			Quite simply, the view would make all the changes in viewDidAppear, but with modal viewing, viewDidAppear is no longer called
 Archive:
 Search Definitions:
 	Top Priority @search(@priority = 5 and not @done)
