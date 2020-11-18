@@ -1,12 +1,13 @@
 Inbox:
-	- Info button could explain what is on the screen
-	- Ensure that minimum version of iOS is suitable
 	- Update app and then don't produce anything else, and only work on Roman Nums?
-	- Rewrite configuration code to support more-modern modal views
+	- Screenshot saving code should probably check for user permissions
 RomanDates:
 	New Features:
 	Ideas:
 		- Rewrite in SwiftUI
+		- Ensure that minimum version of iOS is suitable
+		- Rewrite configuration code to support more-modern modal views
+		- Info button could explain what is on the screen
 		- Make a widget that is a colourful Roman Dates just like the thing I made for Instagram
 		- Roman dates could appear mixed like California face
 		- create an app for the Apple Watch
