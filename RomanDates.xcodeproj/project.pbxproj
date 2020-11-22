@@ -22,6 +22,8 @@
 		631EA76E1402E8A3003FB021 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631EA76D1402E8A3003FB021 /* iAd.framework */; };
 		BF3C1F421BE28297003FD66F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C1F411BE28297003FD66F /* MainViewController.swift */; };
 		BF3C1F441BE28522003FD66F /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C1F431BE28522003FD66F /* Converter.swift */; };
+		BF6047DD256A802800350014 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6047DC256A802800350014 /* UserSettings.swift */; };
+		BF6047E0256A807500350014 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6047DF256A807500350014 /* Utilities.swift */; };
 		BF6770401CF1A80F00A437AF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6770381CF1A80F00A437AF /* SettingsViewController.swift */; };
 		BF6770411CF1A80F00A437AF /* ConverterSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6770391CF1A80F00A437AF /* ConverterSettingsViewController.swift */; };
 		BF6770421CF1A80F00A437AF /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67703A1CF1A80F00A437AF /* AboutViewController.swift */; };
@@ -30,7 +32,9 @@
 		BF6770451CF1A80F00A437AF /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67703D1CF1A80F00A437AF /* ProductCell.swift */; };
 		BF6770461CF1A80F00A437AF /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67703E1CF1A80F00A437AF /* ProductsViewController.swift */; };
 		BF6770471CF1A80F00A437AF /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF67703F1CF1A80F00A437AF /* IAPHelper.swift */; };
+		BF7AFFE02565C5740093425F /* NewConverterSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AFFDF2565C5740093425F /* NewConverterSettingsView.swift */; };
 		BF99018D19DD9A9900E049B0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF99018C19DD9A9900E049B0 /* LaunchScreen.xib */; };
+		BF99DF1F256983F8000EA86D /* SwiftUIViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99DF1E256983F8000EA86D /* SwiftUIViewHostingController.swift */; };
 		BFBF785919ABA938007AB1B0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBF785819ABA938007AB1B0 /* Images.xcassets */; };
 		BFD358D91EEAFC13001E92CF /* MainStoryboard (IAP).storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD358D71EEAFC13001E92CF /* MainStoryboard (IAP).storyboard */; };
 		BFD358DB1EEAFD57001E92CF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD358DA1EEAFD57001E92CF /* StoreKit.framework */; };
@@ -58,6 +62,8 @@
 		BF3C1F431BE28522003FD66F /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		BF5EF5F7252F594500546690 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = BasicBanner/Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		BF5EF5F8252F594500546690 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "BasicBanner/Base.lproj/MainStoryboard (IAP).storyboard"; sourceTree = "<group>"; };
+		BF6047DC256A802800350014 /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		BF6047DF256A807500350014 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		BF6770381CF1A80F00A437AF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BF6770391CF1A80F00A437AF /* ConverterSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConverterSettingsViewController.swift; sourceTree = "<group>"; };
 		BF67703A1CF1A80F00A437AF /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +72,9 @@
 		BF67703D1CF1A80F00A437AF /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		BF67703E1CF1A80F00A437AF /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		BF67703F1CF1A80F00A437AF /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
+		BF7AFFDF2565C5740093425F /* NewConverterSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConverterSettingsView.swift; sourceTree = "<group>"; };
 		BF99018C19DD9A9900E049B0 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		BF99DF1E256983F8000EA86D /* SwiftUIViewHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewHostingController.swift; sourceTree = "<group>"; };
 		BFBF785819ABA938007AB1B0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RomanDates/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		BFD358DA1EEAFD57001E92CF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BFE232911CF11E07000E7079 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = RomanDates/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -92,6 +100,7 @@
 		631EA70B1402E7CF003FB021 = {
 			isa = PBXGroup;
 			children = (
+				BF99DF1E256983F8000EA86D /* SwiftUIViewHostingController.swift */,
 				631EA7201402E7CF003FB021 /* RomanDates */,
 				631EA7191402E7CF003FB021 /* Frameworks */,
 				631EA7171402E7CF003FB021 /* Products */,
@@ -128,7 +137,10 @@
 				BF67703A1CF1A80F00A437AF /* AboutViewController.swift */,
 				BF6770381CF1A80F00A437AF /* SettingsViewController.swift */,
 				BF6770391CF1A80F00A437AF /* ConverterSettingsViewController.swift */,
+				BF7AFFDF2565C5740093425F /* NewConverterSettingsView.swift */,
 				BF67703B1CF1A80F00A437AF /* WhatsNewViewController.swift */,
+				BF6047DC256A802800350014 /* UserSettings.swift */,
+				BF6047DF256A807500350014 /* Utilities.swift */,
 				BFD86C141EF3268600B8FB0A /* IAPs */,
 				BFBF785819ABA938007AB1B0 /* Images.xcassets */,
 				631EA7211402E7CF003FB021 /* Supporting Files */,
@@ -252,12 +264,16 @@
 				BF3C1F441BE28522003FD66F /* Converter.swift in Sources */,
 				BFE232941CF11E61000E7079 /* AppConfiguration.swift in Sources */,
 				BF6770471CF1A80F00A437AF /* IAPHelper.swift in Sources */,
+				BF7AFFE02565C5740093425F /* NewConverterSettingsView.swift in Sources */,
+				BF6047E0256A807500350014 /* Utilities.swift in Sources */,
 				BF6770461CF1A80F00A437AF /* ProductsViewController.swift in Sources */,
 				BF6770421CF1A80F00A437AF /* AboutViewController.swift in Sources */,
 				BF6770401CF1A80F00A437AF /* SettingsViewController.swift in Sources */,
+				BF99DF1F256983F8000EA86D /* SwiftUIViewHostingController.swift in Sources */,
 				BF6770411CF1A80F00A437AF /* ConverterSettingsViewController.swift in Sources */,
 				BF6770451CF1A80F00A437AF /* ProductCell.swift in Sources */,
 				BFE232921CF11E07000E7079 /* AppDelegate.swift in Sources */,
+				BF6047DD256A802800350014 /* UserSettings.swift in Sources */,
 				BF6770431CF1A80F00A437AF /* WhatsNewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,7 +360,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				ONLY_ACTIVE_ARCH = YES;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
@@ -394,7 +410,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
@@ -416,7 +432,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BasicBanner/RomanDates-Prefix.pch";
 				INFOPLIST_FILE = "BasicBanner/RomanDates-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "it.kumo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = RomanDates;
@@ -443,7 +459,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BasicBanner/RomanDates-Prefix.pch";
 				INFOPLIST_FILE = "BasicBanner/RomanDates-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "it.kumo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = RomanDates;
