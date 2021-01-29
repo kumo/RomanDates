@@ -17,7 +17,7 @@ class PreviewViewModel: ObservableObject {
 
         let result = convertedDateParts.descriptiveDateComponentsFor(dateFormatter: userSettings.dateFormatter, separatorSymbol: symbolOptions[userSettings.symbolSeparator])
 
-        print("Converting Date")
+        //print("Converting Date")
         return result
     }
 }
