@@ -100,7 +100,6 @@
 		631EA70B1402E7CF003FB021 = {
 			isa = PBXGroup;
 			children = (
-				BF99DF1E256983F8000EA86D /* SwiftUIViewHostingController.swift */,
 				BF486B7125C4A76A008E82E8 /* RomanDates */,
 				631EA7191402E7CF003FB021 /* Frameworks */,
 				631EA7171402E7CF003FB021 /* Products */,
@@ -130,17 +129,13 @@
 		BF486B7125C4A76A008E82E8 /* RomanDates */ = {
 			isa = PBXGroup;
 			children = (
+				BF66215F25C4ADBF006A873C /* ViewControllers */,
 				BF3C1F431BE28522003FD66F /* Converter.swift */,
-				BF3C1F411BE28297003FD66F /* MainViewController.swift */,
-				BF67703A1CF1A80F00A437AF /* AboutViewController.swift */,
-				BF6770381CF1A80F00A437AF /* SettingsViewController.swift */,
-				BF6770391CF1A80F00A437AF /* ConverterSettingsViewController.swift */,
-				BF7AFFDF2565C5740093425F /* NewConverterSettingsView.swift */,
-				BF67703B1CF1A80F00A437AF /* WhatsNewViewController.swift */,
-				BF6047DC256A802800350014 /* UserSettings.swift */,
-				BF486B8525C4ABBB008E82E8 /* Supporting */,
-				BF6047DF256A807500350014 /* Utilities.swift */,
 				BF486B7C25C4A80B008E82E8 /* IAP */,
+				BF486B8525C4ABBB008E82E8 /* Supporting */,
+				BF99DF1E256983F8000EA86D /* SwiftUIViewHostingController.swift */,
+				BF6047DC256A802800350014 /* UserSettings.swift */,
+				BF6047DF256A807500350014 /* Utilities.swift */,
 			);
 			path = RomanDates;
 			sourceTree = "<group>";
@@ -185,6 +180,19 @@
 				BF486B7425C4A76A008E82E8 /* AppDelegate.swift */,
 			);
 			path = Supporting;
+			sourceTree = "<group>";
+		};
+		BF66215F25C4ADBF006A873C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BF67703A1CF1A80F00A437AF /* AboutViewController.swift */,
+				BF6770391CF1A80F00A437AF /* ConverterSettingsViewController.swift */,
+				BF3C1F411BE28297003FD66F /* MainViewController.swift */,
+				BF7AFFDF2565C5740093425F /* NewConverterSettingsView.swift */,
+				BF6770381CF1A80F00A437AF /* SettingsViewController.swift */,
+				BF67703B1CF1A80F00A437AF /* WhatsNewViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
