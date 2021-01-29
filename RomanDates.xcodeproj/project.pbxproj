@@ -54,7 +54,7 @@
 		631EA71A1402E7CF003FB021 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		631EA71C1402E7CF003FB021 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		631EA71E1402E7CF003FB021 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		631EA7221402E7CF003FB021 /* RomanDates-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "RomanDates-Info.plist"; path = "../RomanDates-Info.plist"; sourceTree = "<group>"; };
+		631EA7221402E7CF003FB021 /* RomanDates-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RomanDates-Info.plist"; sourceTree = "<group>"; };
 		631EA7241402E7CF003FB021 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		631EA76D1402E8A3003FB021 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		BF3C1F401BE28297003FD66F /* RomanDates-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RomanDates-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -63,8 +63,8 @@
 		BF486B7225C4A76A008E82E8 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		BF486B7325C4A76A008E82E8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BF486B7425C4A76A008E82E8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BF5EF5F7252F594500546690 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = BasicBanner/Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		BF5EF5F8252F594500546690 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "BasicBanner/Base.lproj/MainStoryboard (IAP).storyboard"; sourceTree = "<group>"; };
+		BF5EF5F7252F594500546690 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		BF5EF5F8252F594500546690 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/MainStoryboard (IAP).storyboard"; sourceTree = "<group>"; };
 		BF6047DC256A802800350014 /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		BF6047DF256A807500350014 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		BF6770381CF1A80F00A437AF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 		BF67703E1CF1A80F00A437AF /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		BF67703F1CF1A80F00A437AF /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		BF7AFFDF2565C5740093425F /* NewConverterSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConverterSettingsView.swift; sourceTree = "<group>"; };
-		BF99018C19DD9A9900E049B0 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = ../LaunchScreen.xib; sourceTree = "<group>"; };
+		BF99018C19DD9A9900E049B0 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		BF99DF1E256983F8000EA86D /* SwiftUIViewHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewHostingController.swift; sourceTree = "<group>"; };
 		BFD358DA1EEAFD57001E92CF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -101,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				BF99DF1E256983F8000EA86D /* SwiftUIViewHostingController.swift */,
-				631EA7201402E7CF003FB021 /* RomanDates */,
 				BF486B7125C4A76A008E82E8 /* RomanDates */,
 				631EA7191402E7CF003FB021 /* Frameworks */,
 				631EA7171402E7CF003FB021 /* Products */,
@@ -128,28 +127,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		631EA7201402E7CF003FB021 /* RomanDates */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = RomanDates;
-			path = BasicBanner;
-			sourceTree = "<group>";
-		};
-		631EA7211402E7CF003FB021 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				BF99018C19DD9A9900E049B0 /* LaunchScreen.xib */,
-				BF486B7F25C4A91E008E82E8 /* Images */,
-				631EA7221402E7CF003FB021 /* RomanDates-Info.plist */,
-				631EA7231402E7CF003FB021 /* InfoPlist.strings */,
-				53202C5117286BF500BB02BD /* MainStoryboard.storyboard */,
-				BFD358D71EEAFC13001E92CF /* MainStoryboard (IAP).storyboard */,
-			);
-			name = "Supporting Files";
-			path = BasicBanner;
-			sourceTree = "<group>";
-		};
 		BF486B7125C4A76A008E82E8 /* RomanDates */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,13 +138,9 @@
 				BF7AFFDF2565C5740093425F /* NewConverterSettingsView.swift */,
 				BF67703B1CF1A80F00A437AF /* WhatsNewViewController.swift */,
 				BF6047DC256A802800350014 /* UserSettings.swift */,
+				BF486B8525C4ABBB008E82E8 /* Supporting */,
 				BF6047DF256A807500350014 /* Utilities.swift */,
 				BF486B7C25C4A80B008E82E8 /* IAP */,
-				631EA7211402E7CF003FB021 /* Supporting Files */,
-				BF3C1F401BE28297003FD66F /* RomanDates-Bridging-Header.h */,
-				BF486B7225C4A76A008E82E8 /* AppConfiguration.swift */,
-				BF486B7325C4A76A008E82E8 /* Images.xcassets */,
-				BF486B7425C4A76A008E82E8 /* AppDelegate.swift */,
 			);
 			path = RomanDates;
 			sourceTree = "<group>";
@@ -195,6 +168,23 @@
 				533396141745525C0024FF41 /* Default-Portrait@2x.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		BF486B8525C4ABBB008E82E8 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				BF99018C19DD9A9900E049B0 /* LaunchScreen.xib */,
+				BF486B7F25C4A91E008E82E8 /* Images */,
+				631EA7221402E7CF003FB021 /* RomanDates-Info.plist */,
+				631EA7231402E7CF003FB021 /* InfoPlist.strings */,
+				53202C5117286BF500BB02BD /* MainStoryboard.storyboard */,
+				BFD358D71EEAFC13001E92CF /* MainStoryboard (IAP).storyboard */,
+				BF3C1F401BE28297003FD66F /* RomanDates-Bridging-Header.h */,
+				BF486B7225C4A76A008E82E8 /* AppConfiguration.swift */,
+				BF486B7325C4A76A008E82E8 /* Images.xcassets */,
+				BF486B7425C4A76A008E82E8 /* AppDelegate.swift */,
+			);
+			path = Supporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,14 +437,14 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BasicBanner/RomanDates-Prefix.pch";
-				INFOPLIST_FILE = "BasicBanner/RomanDates-Info.plist";
+				GCC_PREFIX_HEADER = "RomanDates/RomanDates-Prefix.pch";
+				INFOPLIST_FILE = "RomanDates/Supporting/RomanDates-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "it.kumo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = RomanDates;
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "BasicBanner/RomanDates-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "RomanDates/Supporting/RomanDates-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
@@ -474,14 +464,14 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BasicBanner/RomanDates-Prefix.pch";
-				INFOPLIST_FILE = "BasicBanner/RomanDates-Info.plist";
+				GCC_PREFIX_HEADER = "RomanDates/RomanDates-Prefix.pch";
+				INFOPLIST_FILE = "RomanDates/Supporting/RomanDates-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "it.kumo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = RomanDates;
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "BasicBanner/RomanDates-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "RomanDates/Supporting/RomanDates-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
