@@ -1,37 +1,38 @@
 Inbox:
-	- Add configuration option for font and colours
-	- Add support for complications
-	- Add support for widgets
-	- Replace settings view with SwiftUI view
-	- Update app and then don't produce anything else, and only work on Roman Nums?
-	- Screenshot saving code should probably check for user permissions
+	- 2021 icon
 RomanDates:
 	New Features:
+		- Link to main Roman Nums app for extra information / cross promote
+		- Add a widget to show current date (with font and colour configurations)
+			Make a widget that is a colourful Roman Dates just like the thing I made for Instagram
+		- Add donations like in Numbery and Roman Nums
 	Ideas:
-		- Rewrite in SwiftUI
-		- Ensure that minimum version of iOS is suitable @na
-		- Rewrite configuration code to support more-modern modal views
+		- Rewrite entire app in SwiftUI
+		- Add configuration options for font and colours
+		- Screenshot saving code should probably check for user permissions
+		- Update app and then don't produce anything else, and only work on Roman Nums?
+		- Add Apple Watch app and complications
 		- Info button could explain what is on the screen
-		- Make a widget that is a colourful Roman Dates just like the thing I made for Instagram
 		- Roman dates could appear mixed like California face
-		- create an app for the Apple Watch
-		- add support for new date picker
-		- explain how the date is calculated
-		- live preview of settings
-		- drag and drop calendar events
-		- show people with birthdays and anniversaries
-		- favourite current date
-		- customise colours and fonts
-		- save current date as image
-		- link to main Roman Nums app for extra information
-		- Add support for proper Roman dates @request
+		- Add support for new date picker
+		- Drag and drop calendar events
+		- Show people with birthdays and anniversaries
+		- Favourite the current date
+		- Add support for "proper" Roman dates @request
 			"Works very well, but FYI on Roman dates." by tullius – Mar 14, 2019
 			Well, okay, it does exactly what it claims to do: convert a number string like “3-14-2019” to Roman numerals. So, yes, well done! But here’s the thing. If you want to tattoo that on your arm, it’s a free country, but that isn’t how Roman dates work. Roman dates are measured from 3 fixed days in the month; the kalends, nones, and ides. Today is the day before the Ides of March, and it’s the year 2772 since the founding of Rome. So today is “pridie Idus Martias ab urbe condita MMDCCLXXII”, or “prid. Id. Mar. MMDCCLXXII AUC”. Just FYI before you head to the tattoo parlor. Maybe check with a Latin teacher first. 🤔😉
 	Bugs:
-		- Remove darkmode since the UI doesn't work properly @done(2020-11-17)
-		- Configuration changes no longer affect the converter view @done(2020-11-17)
-			Quite simply, the view would make all the changes in viewDidAppear, but with modal viewing, viewDidAppear is no longer called
+		- Rewrite configuration code to support more-modern modal views
+			The code expects that the converter view re-appears everytime the configuration is changed
+		- If date order is YMD and show year is turned off, MD should be selected instead @na
 Archive:
+	- Add live view to settings @na @done(2020-11-22) @project(RomanDates / New Features)
+		Use the SwiftUI code from my partial rewrite
+	- Ensure that minimum version of iOS is suitable @na @done(2020-11-22) @project(RomanDates / Ideas)
+		SwiftUI requires iOS 13
+	- Remove darkmode since the UI doesn't work properly @done(2020-11-17) @project(RomanDates / Bugs)
+	- Configuration changes no longer affect the converter view @done(2020-11-17) @project(RomanDates / Bugs)
+		Quite simply, the view would make all the changes in viewDidAppear, but with modal viewing, viewDidAppear is no longer called
 Search Definitions:
 	Top Priority @search(@priority = 5 and not @done)
 	High Priority @search(@priority > 3 and not @done)
