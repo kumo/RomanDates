@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,7 @@
 		631EA71F1402E7CF003FB021 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631EA71E1402E7CF003FB021 /* CoreGraphics.framework */; };
 		631EA7251402E7CF003FB021 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 631EA7231402E7CF003FB021 /* InfoPlist.strings */; };
 		631EA76E1402E8A3003FB021 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631EA76D1402E8A3003FB021 /* iAd.framework */; };
+		BF3807C226778CF000DC2E89 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3807C126778CF000DC2E89 /* IAPManager.swift */; };
 		BF3C1F421BE28297003FD66F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C1F411BE28297003FD66F /* MainViewController.swift */; };
 		BF3C1F441BE28522003FD66F /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C1F431BE28522003FD66F /* Converter.swift */; };
 		BF486B7525C4A76A008E82E8 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF486B7225C4A76A008E82E8 /* AppConfiguration.swift */; };
@@ -38,6 +39,9 @@
 		BF7AFFE02565C5740093425F /* NewConverterSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AFFDF2565C5740093425F /* NewConverterSettingsView.swift */; };
 		BF99018D19DD9A9900E049B0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF99018C19DD9A9900E049B0 /* LaunchScreen.xib */; };
 		BF99DF1F256983F8000EA86D /* SwiftUIViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99DF1E256983F8000EA86D /* SwiftUIViewHostingController.swift */; };
+		BFD34991267783BD007CF627 /* Purchases in Frameworks */ = {isa = PBXBuildFile; productRef = BFD34990267783BD007CF627 /* Purchases */; };
+		BFD349932677865C007CF627 /* PurchasingViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD349922677865C007CF627 /* PurchasingViewHostingController.swift */; };
+		BFD349952677867F007CF627 /* PurchasingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD349942677867F007CF627 /* PurchasingView.swift */; };
 		BFD358D91EEAFC13001E92CF /* MainStoryboard (IAP).storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD358D71EEAFC13001E92CF /* MainStoryboard (IAP).storyboard */; };
 		BFD358DB1EEAFD57001E92CF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD358DA1EEAFD57001E92CF /* StoreKit.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +61,7 @@
 		631EA7221402E7CF003FB021 /* RomanDates-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RomanDates-Info.plist"; sourceTree = "<group>"; };
 		631EA7241402E7CF003FB021 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		631EA76D1402E8A3003FB021 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		BF3807C126778CF000DC2E89 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 		BF3C1F401BE28297003FD66F /* RomanDates-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RomanDates-Bridging-Header.h"; sourceTree = "<group>"; };
 		BF3C1F411BE28297003FD66F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BF3C1F431BE28522003FD66F /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
@@ -78,6 +83,8 @@
 		BF7AFFDF2565C5740093425F /* NewConverterSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConverterSettingsView.swift; sourceTree = "<group>"; };
 		BF99018C19DD9A9900E049B0 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		BF99DF1E256983F8000EA86D /* SwiftUIViewHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewHostingController.swift; sourceTree = "<group>"; };
+		BFD349922677865C007CF627 /* PurchasingViewHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasingViewHostingController.swift; sourceTree = "<group>"; };
+		BFD349942677867F007CF627 /* PurchasingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasingView.swift; sourceTree = "<group>"; };
 		BFD358DA1EEAFD57001E92CF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -91,6 +98,7 @@
 				631EA71B1402E7CF003FB021 /* UIKit.framework in Frameworks */,
 				631EA71D1402E7CF003FB021 /* Foundation.framework in Frameworks */,
 				631EA71F1402E7CF003FB021 /* CoreGraphics.framework in Frameworks */,
+				BFD34991267783BD007CF627 /* Purchases in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +142,9 @@
 				BF486B7C25C4A80B008E82E8 /* IAP */,
 				BF486B8525C4ABBB008E82E8 /* Supporting */,
 				BF99DF1E256983F8000EA86D /* SwiftUIViewHostingController.swift */,
+				BFD349922677865C007CF627 /* PurchasingViewHostingController.swift */,
+				BFD349942677867F007CF627 /* PurchasingView.swift */,
+				BF3807C126778CF000DC2E89 /* IAPManager.swift */,
 				BF6047DC256A802800350014 /* UserSettings.swift */,
 				BF6047DF256A807500350014 /* Utilities.swift */,
 			);
@@ -211,6 +222,9 @@
 			dependencies = (
 			);
 			name = RomanDates;
+			packageProductDependencies = (
+				BFD34990267783BD007CF627 /* Purchases */,
+			);
 			productName = BasicBanner;
 			productReference = 631EA7161402E7CF003FB021 /* RomanDates.app */;
 			productType = "com.apple.product-type.application";
@@ -238,6 +252,9 @@
 				Base,
 			);
 			mainGroup = 631EA70B1402E7CF003FB021;
+			packageReferences = (
+				BFD3498F267783BD007CF627 /* XCRemoteSwiftPackageReference "purchases-ios" */,
+			);
 			productRefGroup = 631EA7171402E7CF003FB021 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -280,7 +297,10 @@
 				BF486B7525C4A76A008E82E8 /* AppConfiguration.swift in Sources */,
 				BF6770471CF1A80F00A437AF /* IAPHelper.swift in Sources */,
 				BF7AFFE02565C5740093425F /* NewConverterSettingsView.swift in Sources */,
+				BFD349952677867F007CF627 /* PurchasingView.swift in Sources */,
+				BF3807C226778CF000DC2E89 /* IAPManager.swift in Sources */,
 				BF6047E0256A807500350014 /* Utilities.swift in Sources */,
+				BFD349932677865C007CF627 /* PurchasingViewHostingController.swift in Sources */,
 				BF6770461CF1A80F00A437AF /* ProductsViewController.swift in Sources */,
 				BF6770421CF1A80F00A437AF /* AboutViewController.swift in Sources */,
 				BF6770401CF1A80F00A437AF /* SettingsViewController.swift in Sources */,
@@ -449,7 +469,10 @@
 				GCC_PREFIX_HEADER = "RomanDates/RomanDates-Prefix.pch";
 				INFOPLIST_FILE = "RomanDates/Supporting/RomanDates-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "it.kumo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = RomanDates;
@@ -478,13 +501,17 @@
 				GCC_PREFIX_HEADER = "RomanDates/RomanDates-Prefix.pch";
 				INFOPLIST_FILE = "RomanDates/Supporting/RomanDates-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "it.kumo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = RomanDates;
 				PROVISIONING_PROFILE = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_BRIDGING_HEADER = "RomanDates/Supporting/RomanDates-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -514,6 +541,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BFD3498F267783BD007CF627 /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.11.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BFD34990267783BD007CF627 /* Purchases */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BFD3498F267783BD007CF627 /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = Purchases;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 631EA70D1402E7CF003FB021 /* Project object */;
 }

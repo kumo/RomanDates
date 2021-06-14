@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Purchases
 
 enum ShortcutItemType: String {
     case ConvertToday
@@ -36,6 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppConfiguration.sharedConfiguration.runHandlerOnFirstLaunch {
             // do nothing
         }
+        
+        Purchases.debugLogsEnabled = true
+        Purchases.configure(withAPIKey: "YDaSskPAAUBLMCznRsMBoSMLYKyDHoLP")
         
         return true
     }
