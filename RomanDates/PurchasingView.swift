@@ -40,7 +40,7 @@ struct PurchasingView: View {
             }
         }
     
-    
+
 }
 
 struct IAPRow: View {
@@ -50,12 +50,16 @@ struct IAPRow: View {
         HStack {
             VStack(alignment: .leading) {
                 Text(product.product.localizedTitle).bold()
-                Text(product.product.localizedDescription)
+             //   Text(product.product.localizedDescription)
             }
 
             Spacer()
 
-            Text(product.localizedPriceString).bold()
+        Text(product.localizedPriceString).bold()
+            .foregroundColor(.white)
+                           .padding(4)
+                           .background(Color.yellow)
+                           .cornerRadius(8)
         }
         .foregroundColor(.primary)
         .padding(8)
